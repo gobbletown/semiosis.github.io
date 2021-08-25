@@ -36,6 +36,86 @@ what could be done with Pen.el and codex!</p>
         </item>
         
         <item>
+            <title>Codex for anything: Imaginary &#43; Real (with a bit of Codex) = Complex</title>
+            <link>http://semiosis.github.io/posts/imaginary-real-codex-complex/</link>
+            <pubDate>Wed, 25 Aug 2021 00:00:00 +1200</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/imaginary-real-codex-complex/</guid>
+            <description>Summary I add an imaginary dimension to the emacs terminal.
+Integrating real interpreters with imaginary ones creates something new that is greater than the sum of their parts; A complex terminal.
+The complex terminal utilises the Codex LM to perform its underlying prompt functions. A complex terminal uses imaginary functions to enable the user to see what may happen upon running a command, to see what may follow after writing some code, and see what people usually do within a terminal context, no matter how deeply nested within interpreters or files.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I add an imaginary dimension to the emacs
+terminal.</p>
+<p>Integrating real interpreters with imaginary
+ones creates something new that is greater than
+the sum of their parts; A <em>complex terminal</em>.</p>
+<p>The complex terminal utilises the Codex LM to
+perform its underlying prompt functions. A
+complex terminal uses imaginary functions to
+enable the user to see what may happen upon
+running a command, to see what may follow
+after writing some code, and see what people
+usually do within a terminal context, no
+matter how deeply nested within interpreters
+or files.</p>
+<p>Much more of this to come. I am trying to make
+this as robust as possible and it&rsquo;s too exciting.</p>
+<h2 id="demos">Demos</h2>
+<h3 id="using-codex-with-vim-and-nano">Using Codex with vim and nano</h3>
+<ul>
+<li>First start emacs</li>
+<li>Then start the emacs terminal</li>
+<li>As you can see I am autocompleting for vim, using emacs</li>
+<li>Likewise you will see I can do the same for nano</li>
+<li>Nano is still pretty hard to use haha</li>
+<li>I could design as many prompt functions as I like for vim using this method</li>
+<li>As you can see I could use context menus and create definitions for vim-related things</li>
+<li>What else can I do?</li>
+<li>Well, while browsing syslogs, I can generate commands to match things, for example</li>
+<li>I could also rely on the autocompletion for EX from within vim</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/A1y3lQZyAnp9n8APxarsb8HT1" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/A1y3lQZyAnp9n8APxarsb8HT1.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/A1y3lQZyAnp9n8APxarsb8HT1.js" id="asciicast-A1y3lQZyAnp9n8APxarsb8HT1" async></script>
+<h3 id="what-do-people-typically-do-in-var-log">What do people typically do in <code>/var/log</code>?</h3>
+<ul>
+<li>I demonstrated showing what people would probably do in a given context.</li>
+<li>I demonstrated using the glossary system to
+find out what a linux utility/log for a linux utility does.</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/67PYiqKAHTzGWDuj0NNIu8YSu" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/67PYiqKAHTzGWDuj0NNIu8YSu.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/67PYiqKAHTzGWDuj0NNIu8YSu.js" id="asciicast-67PYiqKAHTzGWDuj0NNIu8YSu" async></script>
+<h3 id="switching-from-bash-to-python">Switching from bash to python</h3>
+<ul>
+<li>I will demonstrate using the same imaginary
+functions from one interpreter to the next.</li>
+<li>It&rsquo;s also interesting that upon switching to
+a different interpreter such as python, Codex
+will suggest relevant Python libraries for the
+directory, so long as you listed out the
+contents or made it apparent.</li>
+</ul>
+<h3 id="switching-from-bash-to-vim-and-using-codex-inside-vim">Switching from bash to vim and using Codex inside vim</h3>
+<ul>
+<li>It appears that codex runs commands from the EX REPL.</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/52413ZGnS7T1tLKHgeBC2sPYg" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/52413ZGnS7T1tLKHgeBC2sPYg.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/52413ZGnS7T1tLKHgeBC2sPYg.js" id="asciicast-52413ZGnS7T1tLKHgeBC2sPYg" async></script>
+<h3 id="ok-what-about-automating-emacs-with-codex">OK, what about automating emacs with Codex?</h3>
+<ul>
+<li>I can&rsquo;t generate the emacs chrome from <code>emacs -nw -Q</code>, at least from an initial attempt</li>
+<li>Well, I just did &ldquo;Hello World&rdquo;. What&rsquo;s next?</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
             <title>AI21, AIx, OpenAI and HuggingFace with Pen.el</title>
             <link>http://semiosis.github.io/posts/ai21-aix-openai-and-huggingface-with-pen-el/</link>
             <pubDate>Mon, 23 Aug 2021 00:00:00 +1200</pubDate>
