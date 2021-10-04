@@ -81,7 +81,11 @@ complex interpreter
 </div>
 </div>
 <h2 id="the-way-a-program-s-source-code-is-used-within-itself">The way a program&rsquo;s source code is used within itself</h2>
-<p>This can be used to optimise a software program if .</p>
+<p>This can be used to:</p>
+<ul>
+<li>optimise a software by statically or dynamically prioritising functions which are used more often</li>
+<li>generating test cases for functions that the libary provides</li>
+</ul>
 <h3 id="generate-test-functions">Generate test functions</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
