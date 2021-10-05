@@ -69,7 +69,7 @@ It&amp;rsquo;s very easy to generate the required latex snippets with Codex, how
 </div>
 </div>
 <figure>
-    <img src="eulers-identity.svg"/> 
+    <img src="/ox-hugo/eulers-identity.svg"/> 
 </figure>
 
 <h2 id="quadratic-equation">Quadratic equation</h2>
@@ -84,7 +84,7 @@ x = <span style="color:#66d9ef">\frac</span>{-b <span style="color:#66d9ef">\pm<
 </div>
 </div>
 <figure>
-    <img src="quadratic-equation.svg"/> 
+    <img src="/ox-hugo/quadratic-equation.svg"/> 
 </figure>
 
 <p>Demonstration of above:</p>
