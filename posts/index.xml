@@ -16,7 +16,7 @@
             
             <guid>http://semiosis.github.io/posts/imagine-and-reify-a-project-template/</guid>
             <description>Summary This is an example of using Codex + emacs to imagine a programming project. It imagines what types of files might be useful to have for the project, then it populates the files. Inspiration to the AI is taken from the current environment, so the prompts become more powerful as more files are added.
-Generated project  http://github.com/mullikine/my-solidity-practice  Demo This is how easy it is to imagine and reify an type of project.</description>
+Generated project  http://github.com/mullikine/my-solidity-practice  Demo This is how easy it is to imagine and reify any type of project.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>This is an example of using Codex + emacs to
 imagine a programming project. It imagines
@@ -30,7 +30,8 @@ more powerful as more files are added.</p>
 <li><a href="http://github.com/mullikine/my-solidity-practice">http://github.com/mullikine/my-solidity-practice</a></li>
 </ul>
 <h2 id="demo">Demo</h2>
-<p>This is how easy it is to imagine and reify an type of project.</p>
+<p>This is how easy it is to imagine and reify any type of project.</p>
+<h3 id="solidity">Solidity</h3>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/rtsxu9W2gDck8QvqNYYxuzfHK.svg" /></a> -->
 <!-- Play on the blog -->
