@@ -38,6 +38,15 @@ modal prompt entirely for 𝑖web search.</p>
 <dt>Ink</dt>
 <dd><a href="https://semiosis.github.io/ink/">https://semiosis.github.io/ink/</a></dd>
 </dl>
+<h2 id="describing-ai-generated-art-with-alephalpha">Describing AI-generated art with AlephAlpha</h2>
+<dl>
+<dt>Original</dt>
+<dd><a href="https://generative.ink/posts/alchemical-marriage-gpt-3-x-clip/">https://generative.ink/posts/alchemical-marriage-gpt-3-x-clip/</a></dd>
+</dl>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/yUHw9kTYTktrg3RMMebaJqEw1" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/yUHw9kTYTktrg3RMMebaJqEw1.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/yUHw9kTYTktrg3RMMebaJqEw1.js" id="asciicast-yUHw9kTYTktrg3RMMebaJqEw1" async></script>
 <h2 id="prompt">Prompt</h2>
 <dl>
 <dt><code>pf-given-an-image-describe-it/1</code></dt>
