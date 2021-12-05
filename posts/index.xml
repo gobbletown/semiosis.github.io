@@ -6,8 +6,111 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Play Hitchhiker&#39;s Guide To The Galaxy with Codex</title>
+            <link>http://semiosis.github.io/posts/play-hitchhiker-s-guide-to-the-galaxy-with-codex/</link>
+            <pubDate>Sun, 05 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/play-hitchhiker-s-guide-to-the-galaxy-with-codex/</guid>
+            <description>Summary I patch frotz to work around a bug in order to play hhgttg inside cterm (Complex Term).
+This enables me to use OpenAI&amp;rsquo;s Codex to play hhgttg.
+ Precursor article https://mullikine.github.io/posts/hhgttg/  Setup 1 2 3 4 5 6 7  cd git clone &amp;#34;https://gitlab.com/DavidGriffith/frotz&amp;#34; git clone &amp;#34;https://github.com/historicalsource/hitchhikersguide&amp;#34; apt install libao-dev apt install libsndfile-dev apt install libsamplerate-dev apt install libmodplug-dev   Patch 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  diff --git a/src/curses/ux_screen.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I patch <code>frotz</code> to work around a bug in order
+to play <code>hhgttg</code> inside <code>cterm</code> (Complex
+Term).</p>
+<p>This enables me to use OpenAI&rsquo;s Codex to play <code>hhgttg</code>.</p>
+<dl>
+<dt>Precursor article</dt>
+<dd><a href="https://mullikine.github.io/posts/hhgttg/">https://mullikine.github.io/posts/hhgttg/</a></dd>
+</dl>
+<h2 id="setup">Setup</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd
+git clone <span style="color:#e6db74">&#34;https://gitlab.com/DavidGriffith/frotz&#34;</span>
+git clone <span style="color:#e6db74">&#34;https://github.com/historicalsource/hitchhikersguide&#34;</span>
+apt install libao-dev
+apt install libsndfile-dev
+apt install libsamplerate-dev
+apt install libmodplug-dev</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="patch">Patch</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">diff --git a/src/curses/ux_screen.c b/src/curses/ux_screen.c
+index 950d34d..4d56f61 100644
+<span style="color:#f92672">--- a/src/curses/ux_screen.c
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/src/curses/ux_screen.c
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -175,10 +175,11 @@ static void resize_restore_screen(void)
+</span><span style="color:#75715e"></span>  */
+ void unix_resize_display(void)
+ {
+<span style="color:#a6e22e">+/*
+</span><span style="color:#a6e22e"></span>  save_screen();
+  endwin();
+  refresh();
+<span style="color:#f92672">-	resize_restore_screen();
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+	resize_restore_screen();*/
+</span><span style="color:#a6e22e"></span> } /* unix_redraw_display */
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="play">Play</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">~/frotz/frotz ~/hitchhikersguide/COMPILED/s4.z3</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/j2ZpFsjLsWlP80Szx8QYglDy0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/j2ZpFsjLsWlP80Szx8QYglDy0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/j2ZpFsjLsWlP80Szx8QYglDy0.js" id="asciicast-j2ZpFsjLsWlP80Szx8QYglDy0" async></script>
+<h2 id="findings">Findings</h2>
+<p>I found that Cohere seems to complete text
+with a focus on generating prose but doesn&rsquo;t
+adopt the interactive fiction pattern. If
+anything, it&rsquo;s output reads much like a
+walkthrough.</p>
+<p>I also found it useful to switch to Davinci
+from Codex in order to get out of a repetitive
+pattern of completions.</p>
+]]></content>
+        </item>
         
         <item>
             <title>ilambda Tutorial</title>
