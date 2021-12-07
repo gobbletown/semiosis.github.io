@@ -16,7 +16,7 @@
             
             <guid>http://semiosis.github.io/posts/consistency-in-imaginary-programming-functions/</guid>
             <description>Summary I add consistency to results for prompting functions by remembering the previous output to that function and prepending it into the next prompting function prompt.
-Prompt format addition (prepend-previous)  Example prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-evaluating-emacs-lisp-2.prompt  When prepend-previous is on the previously selected/generated prompt and result are prepended to the new prompt to obtain consistency in output.
+Prompt format addition (prepend-previous)  Example prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-evaluating-emacs-lisp-2.prompt  When prepend-previous is switched on, the previous prompt as well as its generated result are prepended before the new prompt to obtain consistency in output.
 This is useful for mocking APIs, for example, or any situation where you need consistency in results, such as for formatting.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I add consistency to results for prompting
@@ -28,8 +28,10 @@ next prompting function prompt.</p>
 <dt>Example prompt</dt>
 <dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/imagine-evaluating-emacs-lisp-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/imagine-evaluating-emacs-lisp-2.prompt</a></dd>
 </dl>
-<p>When <code>prepend-previous</code> is on the previously selected/generated prompt and result
-are prepended to the new prompt to obtain consistency in output.</p>
+<p>When <code>prepend-previous</code> is switched on, the
+previous prompt as well as its generated
+result are prepended before the new prompt to
+obtain consistency in output.</p>
 <p>This is useful for mocking APIs, for example, or any situation where you need consistency in results, such as for formatting.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

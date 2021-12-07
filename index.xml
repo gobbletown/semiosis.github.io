@@ -15,7 +15,7 @@
       
       <guid>http://semiosis.github.io/posts/consistency-in-imaginary-programming-functions/</guid>
       <description>Summary I add consistency to results for prompting functions by remembering the previous output to that function and prepending it into the next prompting function prompt.
-Prompt format addition (prepend-previous)  Example prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-evaluating-emacs-lisp-2.prompt  When prepend-previous is on the previously selected/generated prompt and result are prepended to the new prompt to obtain consistency in output.
+Prompt format addition (prepend-previous)  Example prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-evaluating-emacs-lisp-2.prompt  When prepend-previous is switched on, the previous prompt as well as its generated result are prepended before the new prompt to obtain consistency in output.
 This is useful for mocking APIs, for example, or any situation where you need consistency in results, such as for formatting.</description>
     </item>
     
