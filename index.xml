@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 08 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Constraint-variables for imaginary programming</title>
+      <link>http://semiosis.github.io/posts/constraint-variables-for-imaginary-programming/</link>
+      <pubDate>Thu, 09 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/constraint-variables-for-imaginary-programming/</guid>
+      <description>Summary When it comes to adding consistency to the output of LMs, specifying the type of output you want to see by prepending prompt- generation text examples to your final prompt, is a useful technique.
+When building this functionality into ilambda, I realised that I must keep track of history, or assertions on a &amp;lsquo;partial function basis&amp;rsquo; (i.e. per subset of arguments, rather than function name alone or the full set of arguments).</description>
+    </item>
+    
     <item>
       <title>Consistency in imaginary programming functions</title>
       <link>http://semiosis.github.io/posts/consistency-in-imaginary-programming-functions/</link>

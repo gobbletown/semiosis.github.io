@@ -6,8 +6,40 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 08 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Constraint-variables for imaginary programming</title>
+            <link>http://semiosis.github.io/posts/constraint-variables-for-imaginary-programming/</link>
+            <pubDate>Thu, 09 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/constraint-variables-for-imaginary-programming/</guid>
+            <description>Summary When it comes to adding consistency to the output of LMs, specifying the type of output you want to see by prepending prompt- generation text examples to your final prompt, is a useful technique.
+When building this functionality into ilambda, I realised that I must keep track of history, or assertions on a &amp;lsquo;partial function basis&amp;rsquo; (i.e. per subset of arguments, rather than function name alone or the full set of arguments).</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>When it comes to adding consistency to the
+output of LMs, specifying the type of output
+you want to see by prepending prompt-
+generation text examples to your final prompt, is a useful technique.</p>
+<p>When building this functionality into ilambda,
+I realised that I must keep track of history,
+or assertions on a &lsquo;partial function basis&rsquo;
+(i.e. per subset of arguments, rather than
+function name alone or the full set of
+arguments).</p>
+<p>Otherwise, there&rsquo;d be a single
+history/training which is prepended to all
+ifuntions, which would pollute and inundate
+prompts with too much context, or a completely
+unique set of examples for each unique set of
+parameters, which would be completely useless.</p>
+<p>OK, so how do we specify that? I must specify
+&lsquo;constraint variables&rsquo; for prompt &lsquo;training&rsquo;.</p>
+<p>Interestingly, rather than specifying these inside the <code>.prompt</code> format, I need to do so when the prompt function is actually called.
+However, at one more level of abstraction from prompt functions (i.e. ilambda), this happens in the background of the <code>idefun</code> definition, so it&rsquo;s all taken care of.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Consistency in imaginary programming functions</title>
