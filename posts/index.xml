@@ -42,6 +42,24 @@ However, at one more level of abstraction from prompt functions (i.e. ilambda), 
         </item>
         
         <item>
+            <title>Trying out the Grand Mac, but talking to imaginary Ronald McDonald</title>
+            <link>http://semiosis.github.io/posts/trying-out-the-grand-mac-but-talking-to-imaginary-ronald-mcdonald/</link>
+            <pubDate>Thu, 09 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/trying-out-the-grand-mac-but-talking-to-imaginary-ronald-mcdonald/</guid>
+            <description>Summary I have a conversation with imaginary Ronald McDonald, whilst eating the Grand Mac. I ask him how the sauce is made. He say&amp;rsquo;s Mac and Cheese. What a crook!
+Demo  -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I have a conversation with imaginary Ronald McDonald, whilst eating the Grand Mac.
+I ask him how the sauce is made. He say&rsquo;s Mac and Cheese. What a crook!</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/2qptmb9xaQMkJKviB4GmBmbhJ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/2qptmb9xaQMkJKviB4GmBmbhJ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/2qptmb9xaQMkJKviB4GmBmbhJ.js" id="asciicast-2qptmb9xaQMkJKviB4GmBmbhJ" async></script>]]></content>
+        </item>
+        
+        <item>
             <title>Consistency in imaginary programming functions</title>
             <link>http://semiosis.github.io/posts/consistency-in-imaginary-programming-functions/</link>
             <pubDate>Wed, 08 Dec 2021 00:00:00 +1300</pubDate>
