@@ -53,7 +53,7 @@ terminal provides.</p>
             <guid>http://semiosis.github.io/posts/human-engine-for-training-pen-el/</guid>
             <description>Summary I make a human.engine for prompting the user.
  engine http://github.com/semiosis/engines/blob/master/engines/human.engine The Imitation Game https://academic.oup.com/mind/article/LIX/236/433/986238  The human engine substitutes a prompting API such as the OpenAI API with an actual human.
-Demo Human entering the blurb for Apostrophe   Human pretending to be Jony Ive   Code  http://github.com/semiosis/pen.el/blob/master/scripts/pen-human.py  </description>
+Demo Human entering the blurb for Apostrophe   Human pretending to be Jony Ive   Conversation   Code  http://github.com/semiosis/pen.el/blob/master/scripts/pen-human.py  </description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I make a <code>human.engine</code> for prompting the
 user.</p>
@@ -74,6 +74,11 @@ such as the OpenAI API with an actual human.</p>
 <h3 id="human-pretending-to-be-jony-ive">Human pretending to be Jony Ive</h3>
 <figure>
     <img src="/ox-hugo/jony-ive-response.png"/> 
+</figure>
+
+<h3 id="conversation">Conversation</h3>
+<figure>
+    <img src="/ox-hugo/jony-ive-convo.png"/> 
 </figure>
 
 <h2 id="code">Code</h2>
