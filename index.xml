@@ -31,7 +31,7 @@ Demo  -- </description>
     </item>
     
     <item>
-      <title>Tree-sitter</title>
+      <title>Tree-sitter with language models</title>
       <link>http://semiosis.github.io/posts/tree-sitter/</link>
       <pubDate>Sat, 11 Dec 2021 00:00:00 +1300</pubDate>
       
@@ -39,7 +39,7 @@ Demo  -- </description>
       <description>Summary I learn tree-sitter in order to build an IDE for building parsers in emacs..
 Glossary :: http://github.com/semiosis/glossaries-gh/blob/master/tree-sitter.txt
 Tree-sitter :: https://tree-sitter.github.io/tree-sitter/using-parsers
-1  asciinema upload /tmp/tmpcnw2xfuw-ascii.cast   </description>
+1  asciinema upload /tmp/tmpcnw2xfuw-ascii.cast   Why? You&amp;rsquo;re able to parse your own data structures using the TSInput struct, which means I could use tree-sitter to parse LMs, lazily/generatively. That might be useful for syntax highlighting generated text based on probabilities, for example, or for searching the LM for valid generations</description>
     </item>
     
     <item>
