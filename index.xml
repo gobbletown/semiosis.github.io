@@ -7,7 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tmux for Pen.el</title>
+      <link>http://semiosis.github.io/posts/tmux-for-pen-el/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/tmux-for-pen-el/</guid>
+      <description>Summary I add tmux support for Pen.el. This enables you to scrape the screen and further automate the terminal in combination with prompt creation.
+ --  A prompt that utilises this  Prompt http://github.com/semiosis/prompts/blob/master/prompts/get-documentation-for-syntax-given-screen-2.prompt  Given a view of the screen, get the documentation for the syntax form.
+This prompt will get documentation for anything, based alone on the context that the terminal provides.
+Demo  -- </description>
+    </item>
+    
+    <item>
+      <title>Human engine for training Pen.el</title>
+      <link>http://semiosis.github.io/posts/human-engine-for-training-pen-el/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/human-engine-for-training-pen-el/</guid>
+      <description>Summary I make a human.engine for prompting the user.
+ engine http://github.com/semiosis/engines/blob/master/engines/human.engine The Imitation Game https://academic.oup.com/mind/article/LIX/236/433/986238  The human engine substitutes a prompting API such as the OpenAI API with an actual human.</description>
+    </item>
+    
+    <item>
+      <title>Tree-sitter</title>
+      <link>http://semiosis.github.io/posts/tree-sitter/</link>
+      <pubDate>Sat, 11 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/tree-sitter/</guid>
+      <description>Summary I learn tree-sitter in order to build an IDE for building parsers in emacs..
+Glossary :: http://github.com/semiosis/glossaries-gh/blob/master/tree-sitter.txt
+Tree-sitter :: https://tree-sitter.github.io/tree-sitter/using-parsers
+1  asciinema upload /tmp/tmpcnw2xfuw-ascii.cast   </description>
+    </item>
+    
     <item>
       <title>Constraint-variables for imaginary programming</title>
       <link>http://semiosis.github.io/posts/constraint-variables-for-imaginary-programming/</link>

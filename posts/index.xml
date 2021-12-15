@@ -6,8 +6,92 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>tmux for Pen.el</title>
+            <link>http://semiosis.github.io/posts/tmux-for-pen-el/</link>
+            <pubDate>Wed, 15 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/tmux-for-pen-el/</guid>
+            <description>Summary I add tmux support for Pen.el. This enables you to scrape the screen and further automate the terminal in combination with prompt creation.
+ --  A prompt that utilises this  Prompt http://github.com/semiosis/prompts/blob/master/prompts/get-documentation-for-syntax-given-screen-2.prompt  Given a view of the screen, get the documentation for the syntax form.
+This prompt will get documentation for anything, based alone on the context that the terminal provides.
+Demo  -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I add tmux support for Pen.el. This enables
+you to scrape the screen and further automate
+the terminal in combination with prompt
+creation.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/DgBuxY8EegSGDw3Z1cQjH0nhQ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/DgBuxY8EegSGDw3Z1cQjH0nhQ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/DgBuxY8EegSGDw3Z1cQjH0nhQ.js" id="asciicast-DgBuxY8EegSGDw3Z1cQjH0nhQ" async></script>
+<h2 id="a-prompt-that-utilises-this">A prompt that utilises this</h2>
+<dl>
+<dt>Prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/get-documentation-for-syntax-given-screen-2.prompt">http://github.com/semiosis/prompts/blob/master/prompts/get-documentation-for-syntax-given-screen-2.prompt</a></dd>
+</dl>
+<p>Given a view of the screen, get the
+documentation for the syntax form.</p>
+<p>This prompt will get documentation for
+anything, based alone on the context that the
+terminal provides.</p>
+<h3 id="demo">Demo</h3>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/8hqcbMkEJbWhcp1ao3qR0jMrZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/8hqcbMkEJbWhcp1ao3qR0jMrZ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/8hqcbMkEJbWhcp1ao3qR0jMrZ.js" id="asciicast-8hqcbMkEJbWhcp1ao3qR0jMrZ" async></script>]]></content>
+        </item>
+        
+        <item>
+            <title>Human engine for training Pen.el</title>
+            <link>http://semiosis.github.io/posts/human-engine-for-training-pen-el/</link>
+            <pubDate>Sun, 12 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/human-engine-for-training-pen-el/</guid>
+            <description>Summary I make a human.engine for prompting the user.
+ engine http://github.com/semiosis/engines/blob/master/engines/human.engine The Imitation Game https://academic.oup.com/mind/article/LIX/236/433/986238  The human engine substitutes a prompting API such as the OpenAI API with an actual human.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I make a <code>human.engine</code> for prompting the
+user.</p>
+<dl>
+<dt>engine</dt>
+<dd><a href="http://github.com/semiosis/engines/blob/master/engines/human.engine">http://github.com/semiosis/engines/blob/master/engines/human.engine</a></dd>
+<dt>The Imitation Game</dt>
+<dd><a href="https://academic.oup.com/mind/article/LIX/236/433/986238">https://academic.oup.com/mind/article/LIX/236/433/986238</a></dd>
+</dl>
+<p>The human engine substitutes a prompting API
+such as the OpenAI API with an actual human.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Tree-sitter</title>
+            <link>http://semiosis.github.io/posts/tree-sitter/</link>
+            <pubDate>Sat, 11 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/tree-sitter/</guid>
+            <description>Summary I learn tree-sitter in order to build an IDE for building parsers in emacs..
+Glossary :: http://github.com/semiosis/glossaries-gh/blob/master/tree-sitter.txt
+Tree-sitter :: https://tree-sitter.github.io/tree-sitter/using-parsers
+1  asciinema upload /tmp/tmpcnw2xfuw-ascii.cast   </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I learn tree-sitter in order to build an IDE
+for building parsers in emacs..</p>
+<p>Glossary :: <a href="http://github.com/semiosis/glossaries-gh/blob/master/tree-sitter.txt">http://github.com/semiosis/glossaries-gh/blob/master/tree-sitter.txt</a></p>
+<p>Tree-sitter :: <a href="https://tree-sitter.github.io/tree-sitter/using-parsers">https://tree-sitter.github.io/tree-sitter/using-parsers</a></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">asciinema upload /tmp/tmpcnw2xfuw-ascii.cast</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Constraint-variables for imaginary programming</title>
