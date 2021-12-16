@@ -6,8 +6,133 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Thu, 16 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Pen.el for Social Rescue</title>
+            <link>http://semiosis.github.io/posts/pen-el-for-social-rescue/</link>
+            <pubDate>Thu, 16 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-el-for-social-rescue/</guid>
+            <description>Social Rescue Tech example - Positive NLG Compliments With one line of shell code and a predefined function, and using &amp;ldquo;Amber Heard&amp;rdquo; as the first argument, I generate 10,000 compliments for her.
+ compliments http://github.com/mullikine/positive-nlg-compliments/blob/master/compliments.txt  Time taken to generate 1  git show -s --format=%at a9fccf1   1639635963 1  git show -s --format=%at 08b7c56   1639627967 1 2  # Seconds echo &amp;#34;1639635963 - 1639627967&amp;#34; | bc   7996 1 2  # Total minutes echo &amp;#34;(1639635963 - 1639627967) / 60&amp;#34; | bc   133 It took just over 2 hours to generate 10k compliments.</description>
+            <content type="html"><![CDATA[<h2 id="social-rescue-tech-example-positive-nlg-compliments">Social Rescue Tech example - Positive NLG Compliments</h2>
+<p>With one line of shell code and a predefined
+function, and using &ldquo;Amber Heard&rdquo; as the first
+argument, I generate 10,000 compliments for
+her.</p>
+<dl>
+<dt>compliments</dt>
+<dd><a href="http://github.com/mullikine/positive-nlg-compliments/blob/master/compliments.txt">http://github.com/mullikine/positive-nlg-compliments/blob/master/compliments.txt</a></dd>
+</dl>
+<h3 id="time-taken-to-generate">Time taken to generate</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git show -s --format<span style="color:#f92672">=</span>%at a9fccf1</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">1639635963</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git show -s --format<span style="color:#f92672">=</span>%at 08b7c56</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">1639627967</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Seconds</span>
+echo <span style="color:#e6db74">&#34;1639635963 - 1639627967&#34;</span> | bc</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">7996</span>
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Total minutes</span>
+echo <span style="color:#e6db74">&#34;(1639635963 - 1639627967) / 60&#34;</span> | bc</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">133</span>
+</code></pre></div><p>It took just over 2 hours to generate 10k
+compliments.</p>
+<p>This pipeline will be sped up in the near future by a factor of around 10x.</p>
+<h3 id="demonstrations">Demonstrations</h3>
+<p>Video demonstration:</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/w5ayuAEGGpgsxTCKWbAGRPfvZ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/w5ayuAEGGpgsxTCKWbAGRPfvZ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/w5ayuAEGGpgsxTCKWbAGRPfvZ.js" id="asciicast-w5ayuAEGGpgsxTCKWbAGRPfvZ" async></script>
+<p>8000+ and still generating:</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/YexeaMmvc15iaGzHQFLMD1tr0" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/YexeaMmvc15iaGzHQFLMD1tr0.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/YexeaMmvc15iaGzHQFLMD1tr0.js" id="asciicast-YexeaMmvc15iaGzHQFLMD1tr0" async></script>
+<p>And still generating:</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/cuCzjyq5EwT6dV8Xp3RIk9B3l" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/cuCzjyq5EwT6dV8Xp3RIk9B3l.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/cuCzjyq5EwT6dV8Xp3RIk9B3l.js" id="asciicast-cuCzjyq5EwT6dV8Xp3RIk9B3l" async></script>
+<h3 id="code">Code</h3>
+<dl>
+<dt>Prompt</dt>
+<dd><a href="http://github.com/semiosis/prompts/blob/master/prompts/compliment-generation-based-on-a-celebrity-1.prompt">http://github.com/semiosis/prompts/blob/master/prompts/compliment-generation-based-on-a-celebrity-1.prompt</a></dd>
+</dl>
+<h3 id="final-generated-prompt">Final generated prompt:</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">The following are nice compliments:
+###
+TOPIC: Jason Momoa
+- He has fame, but he doesn&#39;t want it. He has advantage but he doesn&#39;t take it. And he definitely has all our hearts!!!!!
+###
+TOPIC: Amber Heard
+-</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="simulate-real-conversation-using-nlu-and-nlg">Simulate real conversation using NLU and NLG</h2>
+<dl>
+<dt>Demonstration</dt>
+<dd><a href="https://semiosis.github.io/apostrophe/">https://semiosis.github.io/apostrophe/</a></dd>
+</dl>
+<p>Conversation demo 1:</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/K40px4H4CPPN15QMz6Uy8Pz3q" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/K40px4H4CPPN15QMz6Uy8Pz3q.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/K40px4H4CPPN15QMz6Uy8Pz3q.js" id="asciicast-K40px4H4CPPN15QMz6Uy8Pz3q" async></script>
+<p>Conversation demo 2:</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/Mmi1niX76Llg6JigBGFg518LV.js" id="asciicast-Mmi1niX76Llg6JigBGFg518LV" async></script>
+<p>Conversation demo 3:</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/YdX4bzPownHsVT3T0UPLMcp3c" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/YdX4bzPownHsVT3T0UPLMcp3c.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/YdX4bzPownHsVT3T0UPLMcp3c.js" id="asciicast-YdX4bzPownHsVT3T0UPLMcp3c" async></script>]]></content>
+        </item>
         
         <item>
             <title>tmux for Pen.el</title>
