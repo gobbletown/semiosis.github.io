@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 16 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imaginary Interpreter from Complex Term</title>
+      <link>http://semiosis.github.io/posts/imaginary-interpreter-from-complex-term/</link>
+      <pubDate>Sun, 19 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/imaginary-interpreter-from-complex-term/</guid>
+      <description>The idea / workflow You usually start with a real terminal, move to a complex one, and sometimes go to an imaginary from there.
+1) real You are using a regular (real) interpreter, such as ipython and can&amp;rsquo;t remember the name of the library you want to import.
+2) complex So you start a cterm around it.
+3) imaginary You want to detach from real axes for a while and explore the same terminal imaginarily (in order to experiment with ideas).</description>
+    </item>
+    
     <item>
       <title>Pen.el for Social Rescue</title>
       <link>http://semiosis.github.io/posts/pen-el-for-social-rescue/</link>
