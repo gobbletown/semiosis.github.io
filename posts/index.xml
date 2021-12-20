@@ -18,7 +18,7 @@
             <description>The idea / workflow You usually start with a real terminal, move to a complex one, and sometimes go to an imaginary from there.
 1) real You are using a regular (real) interpreter, such as ipython and can&amp;rsquo;t remember the name of the library you want to import.
 2) complex So you start a cterm around it.
-3) imaginary You want to detach from real axes for a while and explore the same terminal imaginarily (in order to experiment with ideas).</description>
+3) imaginary You want to detach from real axis for a while and explore the same terminal imaginarily (in order to experiment with ideas).</description>
             <content type="html"><![CDATA[<h2 id="the-idea-workflow">The idea / workflow</h2>
 <p>You usually start with a real terminal, move to a complex one, and sometimes go to an imaginary from there.</p>
 <h3 id="1-real">1) real</h3>
@@ -28,7 +28,7 @@ library you want to import.</p>
 <h3 id="2-complex">2) complex</h3>
 <p>So you start a <code>cterm</code> around it.</p>
 <h3 id="3-imaginary">3) imaginary</h3>
-<p>You want to detach from real axes for a while
+<p>You want to detach from real axis for a while
 and explore the same terminal imaginarily (in
 order to experiment with ideas).</p>
 <h2 id="summary">Summary</h2>
