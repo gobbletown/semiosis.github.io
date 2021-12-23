@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A prompt to christen / name things</title>
+      <link>http://semiosis.github.io/posts/a-prompt-to-christen-name-things/</link>
+      <pubDate>Thu, 23 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/a-prompt-to-christen-name-things/</guid>
+      <description>Summary I demonstrate a prompt to come up with names for things.
+Prompt  prompt http://github.com/semiosis/prompts/blob/master/prompts/christen-something-with-a-name-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35  task: &amp;#34;Christen something with a name&amp;#34; doc: &amp;#34;Given the details of something, christen with a name&amp;#34; prompt-version: 1 prompt: |-Details: &amp;lt;details&amp;gt; It was given a really catchy nickname by the previous owner: &amp;#34; force-engine: &amp;#34;OpenAI Davinci&amp;#34; force-temperature: 0.</description>
+    </item>
+    
     <item>
       <title>A Codex unparser prompt</title>
       <link>http://semiosis.github.io/posts/a-codex-unparser/</link>
