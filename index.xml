@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 23 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>More interactive imaginary infocom games</title>
+      <link>http://semiosis.github.io/posts/more-interactive-imaginary-infocom-games/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/more-interactive-imaginary-infocom-games/</guid>
+      <description>Summary I build an interactive infocom emulator with Codex.
+ prompt http://github.com/semiosis/prompts/blob/master/prompts/imagine-a-infocom-game-interpreter-2.prompt  Demo  --  Transcript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153  THE HITCHHIKER&amp;#39;S GUIDE TO THE GALAXY Infocom interactive fiction - a science fiction story Copyright (c) 1984 by Infocom, Inc.</description>
+    </item>
+    
     <item>
       <title>A prompt to christen / name things</title>
       <link>http://semiosis.github.io/posts/a-prompt-to-christen-name-things/</link>
