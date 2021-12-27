@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 25 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPT-3/Codex for everything using Pen.el</title>
+      <link>http://semiosis.github.io/posts/gpt-3-codex-for-everything-using-pen-el/</link>
+      <pubDate>Mon, 27 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/gpt-3-codex-for-everything-using-pen-el/</guid>
+      <description>Summary I will demonstrate using GPT-3/Codex for a range of tasks in an integrated way.
+ Create cterm (complex terminal) from an ordinary terminal Create ii (imaginary terminal) Spinning up chatbots while working inside a cterm (or any situation) Spinning up chatbots while mind mapping with GPT-3/Codex  Demo  First start pen with pen -nw -n. Then go to irrsi and start a cterm around it. As you can see, autocompletion is available.</description>
+    </item>
+    
     <item>
       <title>More interactive imaginary infocom games</title>
       <link>http://semiosis.github.io/posts/more-interactive-imaginary-infocom-games/</link>

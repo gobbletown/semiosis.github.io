@@ -6,8 +6,103 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 25 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Mon, 27 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>GPT-3/Codex for everything using Pen.el</title>
+            <link>http://semiosis.github.io/posts/gpt-3-codex-for-everything-using-pen-el/</link>
+            <pubDate>Mon, 27 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/gpt-3-codex-for-everything-using-pen-el/</guid>
+            <description>Summary I will demonstrate using GPT-3/Codex for a range of tasks in an integrated way.
+ Create cterm (complex terminal) from an ordinary terminal Create ii (imaginary terminal) Spinning up chatbots while working inside a cterm (or any situation) Spinning up chatbots while mind mapping with GPT-3/Codex  Demo  First start pen with pen -nw -n. Then go to irrsi and start a cterm around it. As you can see, autocompletion is available.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I will demonstrate using GPT-3/Codex for a
+range of tasks in an integrated way.</p>
+<ul>
+<li>Create <code>cterm</code> (complex terminal) from an ordinary terminal</li>
+<li>Create <code>ii</code> (imaginary terminal)</li>
+<li>Spinning up chatbots while working inside a <code>cterm</code> (or any situation)</li>
+<li>Spinning up chatbots while mind mapping with GPT-3/Codex</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<ul>
+<li>First start pen with <code>pen -nw -n</code>.</li>
+<li>Then go to <code>irrsi</code> and start a <code>cterm</code> around it.</li>
+<li>As you can see, autocompletion is available.</li>
+<li>As you can see, I can easily spin up a Richard Stallman chatbot while in the context of emacs.</li>
+<li>I will now demonstrate the mind-mapping software, and spinning up relevant chatbots.</li>
+<li>As you can see, I can generate subtopics.</li>
+<li>I can then describe the topics.</li>
+<li>I can then spin up chatbots for topics.</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/6MusZnmFDL6oGXL8dDLiahixp" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/6MusZnmFDL6oGXL8dDLiahixp.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/6MusZnmFDL6oGXL8dDLiahixp.js" id="asciicast-6MusZnmFDL6oGXL8dDLiahixp" async></script>
+<ul>
+<li>I now demonstrate starting a complex terminal from a regular bash terminal</li>
+<li>I also demonstrated that I can get documentation for anything I&rsquo;m looking at
+<ul>
+<li>In this case, I brought up documentation for <code>hugo</code></li>
+</ul>
+</li>
+<li>Now I will demonstrate starting an imaginary interpreter from a complex one.
+<ul>
+<li>I&rsquo;m current viewing an ordinary bash terminal through <code>cterm</code>. So I can do things like autocompletion using Codex</li>
+<li>I can also get documentation for anything. Here I demonstrate I can show docs for <code>kern.log</code></li>
+</ul>
+</li>
+</ul>
+<p>The following are the generated docs for sysstat in /var/log.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#34;sysstat&#34; is a system activity viewer and logger.
+It is used to monitor system performance and usage activity.
+It is also used to track the system&#39;s uptime and the activity of all users.</code></pre></td></tr></table>
+</div>
+</div>
+<p>I will now spin up a chatbot.
+Linus told me that I need to use a service file.
+What is a service file? I generate documentation with <code>M-9</code>.
+OK, so I want to visit one of these pages. Do they exist? No problem if not.
+Looks like it was a real website that imaginary Linus recommended.</p>
+<p>OK, so lets change the URL to something we made up and visit it:</p>
+<ul>
+<li><a href="https://www.freedesktop.org/software/systemd/man/systemd.service/how-to-use.html">https://www.freedesktop.org/software/systemd/man/systemd.service/how-to-use.html</a></li>
+</ul>
+<p>I want to know how to use it, you see.</p>
+<p><code>looking-glass</code> imagines the <code>how-to-use.html</code> page.
+The first generation looks good. Lets continue it.
+A few times.</p>
+<p>Now generate html for it.
+Then save the HTML and load it into eww browser.
+Sometimes the generation is good. Other times it&rsquo;s not great. But do we really need it in html? Not really. That&rsquo;s the old web.
+But it is very easy to generate coherent and accurate html from text-only website blueprints, especially with more interaction.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/Lnn6rkNCCDNcWQ1VMBDFGPopL" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/Lnn6rkNCCDNcWQ1VMBDFGPopL.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/Lnn6rkNCCDNcWQ1VMBDFGPopL.js" id="asciicast-Lnn6rkNCCDNcWQ1VMBDFGPopL" async></script>
+<ul>
+<li>Now I demonstrate turning a complex terminal into an imaginary one.</li>
+<li>I have just started a <code>cterm</code> around <code>bash</code>. Now I will start an <code>ii</code>.</li>
+<li>In the imaginary interpreter, I query
+<code>where-in-the-world-is-carman-sandiego.com</code>
+(an imaginary website) and get the location of
+carman. I then get information about the city
+and place it into the glossary.</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/BZMR5vocrqmgMuIHE1n0wYRHx" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/BZMR5vocrqmgMuIHE1n0wYRHx.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/BZMR5vocrqmgMuIHE1n0wYRHx.js" id="asciicast-BZMR5vocrqmgMuIHE1n0wYRHx" async></script>]]></content>
+        </item>
         
         <item>
             <title>More interactive imaginary infocom games</title>
