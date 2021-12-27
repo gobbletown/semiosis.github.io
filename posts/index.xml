@@ -105,6 +105,48 @@ and place it into the glossary.</li>
         </item>
         
         <item>
+            <title>tcl/expect for Pen.el – automating complex terminals</title>
+            <link>http://semiosis.github.io/posts/tcl-expect-for-pen-el-automating-complex-terminals/</link>
+            <pubDate>Mon, 27 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/tcl-expect-for-pen-el-automating-complex-terminals/</guid>
+            <description>Summary I add tcl/expect to Pen.el and provide a DSL to automate the terminal using expect.
+The plan is to automate tmuxified and codexified terminals using expect, generated expectations and automated generated input (send).
+ code http://github.com/semiosis/pen.el/blob/master/scripts/pen-x  Demo  pet starts emacs&#39; term inside the docker container pen-x is the expect DSL  The following command runs the expect DSL inside of emacs term. It wraps bash and then automates some input.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I add tcl/expect to Pen.el and provide a DSL
+to automate the terminal using expect.</p>
+<p>The plan is to automate tmuxified and
+codexified terminals using expect, generated
+expectations and automated generated input
+(send).</p>
+<dl>
+<dt>code</dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/scripts/pen-x">http://github.com/semiosis/pen.el/blob/master/scripts/pen-x</a></dd>
+</dl>
+<h2 id="demo">Demo</h2>
+<ul>
+<li><code>pet</code> starts emacs' <code>term</code> inside the docker container</li>
+<li><code>pen-x</code> is the expect DSL</li>
+</ul>
+<p>The following command runs the expect DSL
+inside of emacs <code>term</code>. It wraps bash and then
+automates some input.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pet pen-x -sh bash -e mele -s <span style="color:#e6db74">&#34;echo hi&#34;</span> -c m -i</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/KALNmKf45wzcNoOJIdzKYgM3K" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/KALNmKf45wzcNoOJIdzKYgM3K.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/KALNmKf45wzcNoOJIdzKYgM3K.js" id="asciicast-KALNmKf45wzcNoOJIdzKYgM3K" async></script>]]></content>
+        </item>
+        
+        <item>
             <title>More interactive imaginary infocom games</title>
             <link>http://semiosis.github.io/posts/more-interactive-imaginary-infocom-games/</link>
             <pubDate>Sat, 25 Dec 2021 00:00:00 +1300</pubDate>
