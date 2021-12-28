@@ -6,8 +6,42 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 27 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Parallelization for Pen.el – exuberant completions</title>
+            <link>http://semiosis.github.io/posts/parallelization-for-pen-el-exuberant-completions/</link>
+            <pubDate>Tue, 28 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/parallelization-for-pen-el-exuberant-completions/</guid>
+            <description>Summary I add parallization for Pen.el using GNU parallel. This means parallelization can happen across servers, for example, or take advantage of tmux.
+Simply set n-simultaneous-requests to a number in pen.yaml.
+1 2  # lm-complete-generic is parallelised for increased prompting throughput n-simultaneous-requests: 5    code http://github.com/semiosis/pen.el/blob/master/scripts/lm-complete  Demo  -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I add parallization for Pen.el using <code>GNU</code> parallel.
+This means parallelization can happen across servers, for example, or take advantage of <code>tmux</code>.</p>
+<p>Simply set <code>n-simultaneous-requests</code> to a number in <code>pen.yaml</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># lm-complete-generic is parallelised for increased prompting throughput</span>
+<span style="color:#f92672">n-simultaneous-requests</span>: <span style="color:#ae81ff">5</span></code></pre></td></tr></table>
+</div>
+</div>
+<dl>
+<dt>code</dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/scripts/lm-complete">http://github.com/semiosis/pen.el/blob/master/scripts/lm-complete</a></dd>
+</dl>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/jGlwrsfSgY4QbTDyw9ceuqdJA" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/jGlwrsfSgY4QbTDyw9ceuqdJA.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/jGlwrsfSgY4QbTDyw9ceuqdJA.js" id="asciicast-jGlwrsfSgY4QbTDyw9ceuqdJA" async></script>]]></content>
+        </item>
         
         <item>
             <title>GPT-3/Codex for everything using Pen.el</title>

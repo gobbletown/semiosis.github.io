@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 27 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parallelization for Pen.el – exuberant completions</title>
+      <link>http://semiosis.github.io/posts/parallelization-for-pen-el-exuberant-completions/</link>
+      <pubDate>Tue, 28 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/parallelization-for-pen-el-exuberant-completions/</guid>
+      <description>Summary I add parallization for Pen.el using GNU parallel. This means parallelization can happen across servers, for example, or take advantage of tmux.
+Simply set n-simultaneous-requests to a number in pen.yaml.
+1 2  # lm-complete-generic is parallelised for increased prompting throughput n-simultaneous-requests: 5    code http://github.com/semiosis/pen.el/blob/master/scripts/lm-complete  Demo  -- </description>
+    </item>
+    
     <item>
       <title>GPT-3/Codex for everything using Pen.el</title>
       <link>http://semiosis.github.io/posts/gpt-3-codex-for-everything-using-pen-el/</link>
