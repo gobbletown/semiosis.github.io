@@ -229,7 +229,15 @@ or place it inside of <code>~/.pen</code>.</p>
 <!-- Play on asciinema.com -->
 <!-- <a title="asciinema recording" href="https://asciinema.org/a/jsBLH1EJvaHRbPfp9gbQYDV5j" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/jsBLH1EJvaHRbPfp9gbQYDV5j.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/jsBLH1EJvaHRbPfp9gbQYDV5j.js" id="asciicast-jsBLH1EJvaHRbPfp9gbQYDV5j" async></script>]]></content>
+<script src="https://asciinema.org/a/jsBLH1EJvaHRbPfp9gbQYDV5j.js" id="asciicast-jsBLH1EJvaHRbPfp9gbQYDV5j" async></script>
+<h3 id="second-attempt-trying-to-get-multiple-prompt-functions-happening-simultaneously">Second attempt - Trying to get multiple prompt functions happening simultaneously</h3>
+<p>Initially I was allocating the first available
+emacs daemon, but for some reason, it was
+still running in serial.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/wfeYOsnE5B815I7KNyHRxNvBN" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/wfeYOsnE5B815I7KNyHRxNvBN.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/wfeYOsnE5B815I7KNyHRxNvBN.js" id="asciicast-wfeYOsnE5B815I7KNyHRxNvBN" async></script>]]></content>
         </item>
         
         <item>
