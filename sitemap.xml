@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://semiosis.github.io/posts/multiple-pen-el-daemons-for-asynchronous-llm-prompting-from-an-lsp-server/</loc>
+    <lastmod>2021-12-28T00:00:00+13:00</lastmod>
+  </url><url>
     <loc>http://semiosis.github.io/posts/parallelization-for-pen-el-exuberant-completions/</loc>
     <lastmod>2021-12-28T00:00:00+13:00</lastmod>
   </url><url>

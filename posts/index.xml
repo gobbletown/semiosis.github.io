@@ -10,6 +10,229 @@
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Multiple Pen.el daemons for asynchronous LLM prompting from an LSP server</title>
+            <link>http://semiosis.github.io/posts/multiple-pen-el-daemons-for-asynchronous-llm-prompting-from-an-lsp-server/</link>
+            <pubDate>Tue, 28 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/multiple-pen-el-daemons-for-asynchronous-llm-prompting-from-an-lsp-server/</guid>
+            <description>Summary I add an emacs daemon manager for Pen.el so the LSP server can make multiple prompting requests at the same time, asynchronously.
+This is incredibly useful for the LSP server.
+I add support to the docker container to demonstate usage of the LSP server.
+Starting the pen lsp server from outside the docker container 1  pen sh pen-lsp   Or simply:
+1  pen lsp   It is a repl-based LSP server.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I add an emacs daemon manager for <code>Pen.el</code> so
+the LSP server can make multiple prompting
+requests at the same time, asynchronously.</p>
+<p>This is incredibly useful for the LSP server.</p>
+<p>I add support to the docker container to
+demonstate usage of the LSP server.</p>
+<h2 id="starting-the-pen-lsp-server-from-outside-the-docker-container">Starting the pen lsp server from outside the docker container</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pen sh pen-lsp</code></pre></td></tr></table>
+</div>
+</div>
+<p>Or simply:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pen lsp</code></pre></td></tr></table>
+</div>
+</div>
+<p>It is a repl-based LSP server.</p>
+<h3 id="configure-it-by-simply-editing-efm-langserver-config-dot-yaml">Configure it by simply editing <code>efm-langserver-config.yaml</code></h3>
+<p>Place <code>efm-langserver-config.yaml</code> inside your <code>pen.el/config</code> directory
+or place it inside of <code>~/.pen</code>.</p>
+<h2 id="code">Code</h2>
+<h3 id="elisp">elisp</h3>
+<dl>
+<dt><code>pen-support.el</code></dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-support.el">http://github.com/semiosis/pen.el/blob/master/src/pen-support.el</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun pen-daemon-name ()
+  (let ((d (<span style="color:#a6e22e">daemonp</span>)))
+    (if d
+        (if (<span style="color:#a6e22e">stringp</span> d)
+            (f-filename (<span style="color:#a6e22e">daemonp</span>))
+          <span style="color:#75715e">;; Sometimes it&#39;s a bool</span>
+          <span style="color:#e6db74">&#34;DEFAULT&#34;</span>)
+      <span style="color:#e6db74">&#34;&#34;</span>)))
+
+(defmacro pen-eval-for-host (daemon-name <span style="color:#66d9ef">&amp;rest</span> body)
+  <span style="color:#f92672">`</span>(let ((result (progn <span style="color:#f92672">,@</span>body)))
+     (shut-up
+       (let ((fp (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;/tmp/eval-output-&#34;</span> <span style="color:#f92672">,</span>daemon-name <span style="color:#e6db74">&#34;.txt&#34;</span>)))
+         (if result
+             (write-to-file (str result) fp)
+           (write-to-file <span style="color:#e6db74">&#34;&#34;</span> fp))))
+     <span style="color:#66d9ef">nil</span>))</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="shell">shell</h3>
+<dl>
+<dt><code>pen-e</code></dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/scripts/pen-e">http://github.com/semiosis/pen.el/blob/master/scripts/pen-e</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p $HOME/.pen/pool/available
+
+<span style="color:#75715e"># for each</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> $n<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+    pool_socket<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pen-emacsd-</span>$i<span style="color:#e6db74">&#34;</span>
+    cmd1 pen-e -D <span style="color:#e6db74">&#34;</span>$pool_socket<span style="color:#e6db74">&#34;</span> sd 1&gt;&amp;<span style="color:#ae81ff">2</span>
+    pen-e -D <span style="color:#e6db74">&#34;</span>$pool_socket<span style="color:#e6db74">&#34;</span> sd
+    <span style="color:#66d9ef">if</span> pen-e -D <span style="color:#e6db74">&#34;</span>$pool_socket<span style="color:#e6db74">&#34;</span> running; <span style="color:#66d9ef">then</span>
+        touch $HOME/<span style="color:#e6db74">&#34;.pen/pool/available/</span>$pool_socket<span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">fi</span>
+ <span style="color:#66d9ef">done</span></code></pre></td></tr></table>
+</div>
+</div>
+<dl>
+<dt><code>penf</code></dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/scripts/pen">http://github.com/semiosis/pen.el/blob/master/scripts/pen</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--parallel|--pool<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    export USE_POOL<span style="color:#f92672">=</span>y
+    shift
+<span style="color:#f92672">}</span>
+;;</code></pre></td></tr></table>
+</div>
+</div>
+<dl>
+<dt><code>eval.sh</code></dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/scripts/eval.sh">http://github.com/semiosis/pen.el/blob/master/scripts/eval.sh</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> test <span style="color:#e6db74">&#34;</span>$USE_POOL<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y&#34;</span>; <span style="color:#66d9ef">then</span>
+    <span style="color:#75715e"># Just take the first one</span>
+    <span style="color:#66d9ef">for</span> socket_fp in $HOME/.pen/pool/available/pen-emacsd-*; <span style="color:#66d9ef">do</span>
+        SOCKET<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$socket_fp<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+        break
+    <span style="color:#66d9ef">done</span>
+
+    rm -f $HOME/.pen/pool/available/$SOCKET
+<span style="color:#66d9ef">fi</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="language-server-config">language server config</h3>
+<dl>
+<dt><code>efm-langserver-config.yaml</code></dt>
+<dd><a href="http://github.com/semiosis/pen.el/blob/master/config/efm-langserver-config.yaml">http://github.com/semiosis/pen.el/blob/master/config/efm-langserver-config.yaml</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">glossary1</span>: <span style="color:#75715e">&amp;glossary1</span>
+  <span style="color:#75715e"># The impementation is a combination of documentation and hover</span>
+  <span style="color:#75715e"># documentation is provided to the thing under the cursor</span>
+
+  <span style="color:#75715e"># The rest go to the hover provider as signature docs</span>
+  <span style="color:#f92672">hover-command</span>: <span style="color:#e6db74">&#39;&#34;ci&#34; &#34;penf&#34; &#34;--pool&#34; &#34;pf-define-word-for-glossary/1&#34;&#39;</span>
+  <span style="color:#f92672">hover-stdin</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#75715e"># hover-type: &#34;markdown&#34;</span>
+  <span style="color:#75715e"># hover-type: &#34;plaintext&#34;</span>
+  <span style="color:#f92672">format-command</span>: <span style="color:#e6db74">&#39;pen-pretty-paragraph&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">penf --pool pf-generic-completion-50-tokens/1 <span style="color:#e6db74">&#34;Once upon&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span><span style="color:#e6db74">&#34;PEN_MODEL: DummyModel&#34;</span>, <span style="color:#e6db74">&#34;prompt: Once upon&#34;</span>, <span style="color:#e6db74">&#34;n: 1&#34;</span>, <span style="color:#e6db74">&#34;top_k: 1&#34;</span>, <span style="color:#e6db74">&#34;top_p: 1&#34;</span>, <span style="color:#e6db74">&#34;log_probs: 10&#34;</span>, <span style="color:#e6db74">&#34;stop_sequences: [&#39;
+</span></code></pre></div><h3 id="first-attempt-at-running-lsp-server-on-emacs-daemon-pool">First attempt at running LSP server on emacs daemon pool</h3>
+<ul>
+<li>The daemon selection needs a little more work</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/jsBLH1EJvaHRbPfp9gbQYDV5j" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/jsBLH1EJvaHRbPfp9gbQYDV5j.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/jsBLH1EJvaHRbPfp9gbQYDV5j.js" id="asciicast-jsBLH1EJvaHRbPfp9gbQYDV5j" async></script>]]></content>
+        </item>
+        
+        <item>
             <title>Parallelization for Pen.el – exuberant completions</title>
             <link>http://semiosis.github.io/posts/parallelization-for-pen-el-exuberant-completions/</link>
             <pubDate>Tue, 28 Dec 2021 00:00:00 +1300</pubDate>
