@@ -17,8 +17,7 @@
       <description>Summary I add an emacs daemon manager for Pen.el so the LSP server can make multiple prompting requests at the same time, asynchronously.
 This is incredibly useful for the LSP server.
 I add support to the docker container to demonstate usage of the LSP server.
-Starting the pen lsp server from outside the docker container 1  pen sh pen-lsp   Or simply:
-1  pen lsp   It is a repl-based LSP server.</description>
+The definitive demo The daemons are working perfectly in harmony! Now when supplying --pool to penf, it will delegate the prompting task to a random emacs daemon.</description>
     </item>
     
     <item>

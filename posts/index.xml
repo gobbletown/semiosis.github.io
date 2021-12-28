@@ -18,8 +18,7 @@
             <description>Summary I add an emacs daemon manager for Pen.el so the LSP server can make multiple prompting requests at the same time, asynchronously.
 This is incredibly useful for the LSP server.
 I add support to the docker container to demonstate usage of the LSP server.
-Starting the pen lsp server from outside the docker container 1  pen sh pen-lsp   Or simply:
-1  pen lsp   It is a repl-based LSP server.</description>
+The definitive demo The daemons are working perfectly in harmony! Now when supplying --pool to penf, it will delegate the prompting task to a random emacs daemon.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>I add an emacs daemon manager for <code>Pen.el</code> so
 the LSP server can make multiple prompting
@@ -27,6 +26,19 @@ requests at the same time, asynchronously.</p>
 <p>This is incredibly useful for the LSP server.</p>
 <p>I add support to the docker container to
 demonstate usage of the LSP server.</p>
+<h2 id="the-definitive-demo">The definitive demo</h2>
+<p>The daemons are working perfectly in harmony!
+Now when supplying <code>--pool</code> to <code>penf</code>, it will
+delegate the prompting task to a random emacs
+daemon.</p>
+<p>The speedup with simultaneous prompts in emacs
+is dramatic, able to display documentation for
+as many different words as you want
+simultaneously without any queuing.</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/N19CRtNMF2n1ckZb5AZxO6uoO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/N19CRtNMF2n1ckZb5AZxO6uoO.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/N19CRtNMF2n1ckZb5AZxO6uoO.js" id="asciicast-N19CRtNMF2n1ckZb5AZxO6uoO" async></script>
 <h2 id="starting-the-pen-lsp-server-from-outside-the-docker-container">Starting the pen lsp server from outside the docker container</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
