@@ -36,9 +36,9 @@ is dramatic, able to display documentation for
 as many different words as you want
 simultaneously without any queuing.</p>
 <!-- Play on asciinema.com -->
-<!-- <a title="asciinema recording" href="https://asciinema.org/a/N19CRtNMF2n1ckZb5AZxO6uoO" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/N19CRtNMF2n1ckZb5AZxO6uoO.svg" /></a> -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ucCTC2hOxWeZGP6HJomPjsMgQ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ucCTC2hOxWeZGP6HJomPjsMgQ.svg" /></a> -->
 <!-- Play on the blog -->
-<script src="https://asciinema.org/a/N19CRtNMF2n1ckZb5AZxO6uoO.js" id="asciicast-N19CRtNMF2n1ckZb5AZxO6uoO" async></script>
+<script src="https://asciinema.org/a/ucCTC2hOxWeZGP6HJomPjsMgQ.js" id="asciicast-ucCTC2hOxWeZGP6HJomPjsMgQ" async></script>
 <h2 id="starting-the-pen-lsp-server-from-outside-the-docker-container">Starting the pen lsp server from outside the docker container</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -217,13 +217,14 @@ or place it inside of <code>~/.pen</code>.</p>
   <span style="color:#75715e"># documentation is provided to the thing under the cursor</span>
 
   <span style="color:#75715e"># The rest go to the hover provider as signature docs</span>
-  <span style="color:#f92672">hover-command</span>: <span style="color:#e6db74">&#39;&#34;ci&#34; &#34;penf&#34; &#34;--pool&#34; &#34;pf-define-word-for-glossary/1&#34;&#39;</span>
+  <span style="color:#f92672">hover-command</span>: <span style="color:#e6db74">&#39;pen-ci -f -a penf -u -nj --pool pf-define-word-for-glossary/1&#39;</span>
   <span style="color:#f92672">hover-stdin</span>: <span style="color:#66d9ef">true</span>
   <span style="color:#75715e"># hover-type: &#34;markdown&#34;</span>
   <span style="color:#75715e"># hover-type: &#34;plaintext&#34;</span>
   <span style="color:#f92672">format-command</span>: <span style="color:#e6db74">&#39;pen-pretty-paragraph&#39;</span></code></pre></td></tr></table>
 </div>
 </div>
+<p><code>pen-ci -f -a</code> is used to make <code>efm- langserver</code> asynchronous, along with <code>tmux neww</code> for running the command asynchronously.</p>
 <h2 id="demo">Demo</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
