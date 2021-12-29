@@ -6,8 +6,725 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>A prompting LSP server for any language or context using large language models, built with emacs</title>
+            <link>http://semiosis.github.io/posts/a-prompting-lsp-server-for-any-language-or-context-using-large-language-models/</link>
+            <pubDate>Thu, 30 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/a-prompting-lsp-server-for-any-language-or-context-using-large-language-models/</guid>
+            <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Summary I have put together an LSP server that utilises large LMs, so that interacting with your computer whilst utilising AI systems is fully transparent and controllable.
+You have control over:
+ What information is sent to the language model (could be to Google, Microsoft, etc.).  For example, a prompt may watch your screen and send that information to the LM.</description>
+            <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>Install with Pen</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen.el on GitHub</td>
+<td><a href="https://github.com/semiosis/pen.el/">https://github.com/semiosis/pen.el/</a></td>
+</tr>
+<tr>
+<td>Tutorial</td>
+<td><a href="https://mullikine.github.io/posts/pen-el-tutorial/">https://mullikine.github.io/posts/pen-el-tutorial/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary</h2>
+<p>I have put together an LSP server that
+utilises large LMs, so that interacting with
+your computer whilst utilising AI systems is
+fully transparent and controllable.</p>
+<p>You have control over:</p>
+<ul>
+<li>What information is sent to the language model (could be to Google, Microsoft, etc.).
+<ul>
+<li>For example, a prompt may watch your
+screen and send that information to the LM.
+<code>Pen.el</code> gives you control of that
+information, and you may also, for
+example, generate fake information, or
+obscure information by placing a <code>sed</code>
+command, for example, in the prompt
+preprocessor.
+<ul>
+<li>An aside: Now the below prompt, technically sends
+private information to the language server
+so that LM can obscure it, but does not
+obscure it before sending to the server.</li>
+<li><a href="http://github.com/semiosis/prompts/blob/master/prompts/hide-personal-information-1.prompt">http://github.com/semiosis/prompts/blob/master/prompts/hide-personal-information-1.prompt</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How much information is sent</li>
+<li>Which language models you will use</li>
+<li>Building software language model agnostically
+<ul>
+<li>Design for multiple models and run prompts on your own private models, if you want</li>
+</ul>
+</li>
+</ul>
+<p>Only this way can you avoid trusting large
+corporations with all of your private information. Make no mistake, <a href="https://en.wikipedia.org/wiki/Almost%5Fall">almost all</a> (effectively all)
+information is about to be effectively harvested due to language models and inference, while using a computer.
+It&rsquo;s only out of good will that this doesn&rsquo;t happen. But how long will that last now the LM technology cat is out of the bag?</p>
+<p>It&rsquo;s therefore imperative to be able to
+control this flow of information. You need a
+language server for large LMs, to be your
+Copilot, your personal assistant, your Google search,
+Grammerly, etc., an AGI interface that you have full
+control over. That is part of what <code>Pen.el</code> is. It&rsquo;s an LSP server for anything.</p>
+<p>If you understand what emacs is then you&rsquo;re
+probably aware of the way that people try to
+do all of their computing through emacs. And
+that is one reason for emacs being the ideal
+choice for an LSP server. The other big reason
+is that everything you do through emacs can fit within an GPT-3 prompt.</p>
+<h2 id="current-state-of-pen-dot-el-lsp-server">Current state of Pen.el LSP server</h2>
+<p>It is very nearly ready to be used for all
+emacs modes, and for other editors. The issue
+currently is that LSP servers require access
+to a real file. That should be fairly
+straightforward to hack around, so no problem
+&ndash; I&rsquo;ll have that finished in the next few
+days.</p>
+<h2 id="prompting-server">Prompting server</h2>
+<p>The <code>Pen.el</code> container also functions as a prompting server.</p>
+<p><code>Pen.el</code> may very well be simultaneously the
+first open-source prompting server and LSP
+server for prompting.</p>
+<p>See this blog article for more on how it can be used in your own pipelines.
+It&rsquo;s dead simple, just pipe into the <code>penf</code>
+script along with the prompt function name and
+arguments the same way the <code>efm-langserver</code>
+does it shown below.</p>
+<p>Something like this</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pena -nj --pool --temp 0.9 pf-very-witty-pick-up-lines-for-a-topic/1 imagination</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/7XWErLGNNXjusypShOIa4f7Wg" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/7XWErLGNNXjusypShOIa4f7Wg.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/7XWErLGNNXjusypShOIa4f7Wg.js" id="asciicast-7XWErLGNNXjusypShOIa4f7Wg" async></script>
+<p>See <a href="https://mullikine.github.io/posts/pen-el-host-interop-and-client-server/">https://mullikine.github.io/posts/pen-el-host-interop-and-client-server/</a></p>
+<h2 id="usage">Usage</h2>
+<p>Firstly install Pen.el. The best way to use it currently is via the docker container.</p>
+<dl>
+<dt>Installation instructions</dt>
+<dd><a href="https://semiosis.github.io/pen/">https://semiosis.github.io/pen/</a></dd>
+</dl>
+<h2 id="configuration">Configuration</h2>
+<dl>
+<dt>The LSP configuration lives here</dt>
+<dd><code>$HOME/.pen/efm-langserver-config.yaml</code></dd>
+</dl>
+<p>Under the list of languages recognised there is one called <code>global</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">languages</span>:
+  <span style="color:#f92672">text</span>:
+    - <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*pen-world-language</span>
+    - <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*pen-world-language-completion</span>
+    - <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*glossary1</span>
+
+  <span style="color:#f92672">global</span>:
+    - <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*pen-world-language</span>
+    - <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*pen-world-language-completion</span>
+    - <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*glossary1</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>As you can see I have added <code>glossary</code> to <code>global</code>.
+This enables hover documentation for where your cursor is at.</p>
+<p>The prompt function <code>pf-define-word-for-glossary/1</code> will be used.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">glossary1</span>: <span style="color:#75715e">&amp;glossary1</span>
+  <span style="color:#75715e"># The impementation is a combination of documentation and hover</span>
+  <span style="color:#75715e"># documentation is provided to the thing under the cursor</span>
+
+  <span style="color:#75715e"># The rest go to the hover provider as signature docs</span>
+  <span style="color:#f92672">hover-command</span>: <span style="color:#e6db74">&#34;pen-ci -f -a penf -u -nj --pool pf-define-word-for-glossary/1&#34;</span>
+  <span style="color:#75715e"># hover-command: &#34;timeout -k 0.1 -s KILL 0.1 pen-ci -f -a cat&#34;</span>
+  <span style="color:#f92672">hover-stdin</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#75715e"># hover-type: &#34;markdown&#34;</span>
+  <span style="color:#75715e"># hover-type: &#34;plaintext&#34;</span>
+  <span style="color:#f92672">format-command</span>: <span style="color:#e6db74">&#39;pen-pretty-paragraph&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Within the <code>pen.el</code> repository, you have a
+list of modes defined here.</p>
+<p>This is for the emacs client when running
+emacs inside the docker container, which you
+can try out for yourself currently.</p>
+<p><a href="http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el">http://github.com/semiosis/pen.el/blob/master/src/pen-lsp-client.el</a></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defset pen-lsp-modes <span style="color:#f92672">&#39;</span>(text-mode
+                        emacs-lisp-mode
+                        sh-mode
+                        org-mode awk-mode eww-mode
+                        special-mode python-mode
+                        prog-mode))</code></pre></td></tr></table>
+</div>
+</div>
+<p>However, when completed this wont need to be
+configured for use with other editors.</p>
+<h2 id="how-it-works">How it works</h2>
+<p><code>pen.el</code> is a prompting pipeline which
+utilises templating and many different
+language and world models to generate
+responses. That could be used to generate
+code, guitar tabs, recipes, to imagine a
+programming interface or to interact with a
+chatbot, for example.</p>
+<p><code>pen.el</code> is written in emacs lisp, and is
+daemonised to server an LSP server, which in
+turn is used by another emacs or to different
+editors to provide documentation and
+refactoring tools.</p>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/33i61wLzBYECCkqlHhXhpD8qm" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/33i61wLzBYECCkqlHhXhpD8qm.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/33i61wLzBYECCkqlHhXhpD8qm.js" id="asciicast-33i61wLzBYECCkqlHhXhpD8qm" async></script>
+<h2 id="customizing-the-prompts">Customizing the prompts</h2>
+<p>That is done via the following repository:</p>
+<p><a href="https://github.com/semiosis/prompts/tree/master/prompts">https://github.com/semiosis/prompts/tree/master/prompts</a></p>
+<h2 id="example-debug-information">Example debug information</h2>
+<p>For your interest.</p>
+<p>The command <code>M-x pen-diagnostics-show-context</code>
+will display information on the last prompt.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">ai21-last-output</span>: <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#f92672">ai21-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/ai21-temp.txt</span>
+<span style="color:#f92672">aix-last-output</span>: <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#f92672">aix-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/aix-temp.txt</span>
+<span style="color:#f92672">alephalpha-last-output</span>: <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#f92672">alephalpha-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/alephalpha-temp.txt</span>
+<span style="color:#f92672">hf-last-output</span>: <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#f92672">hf-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/hf-temp.txt</span>
+<span style="color:#f92672">human-last-output</span>: <span style="color:#e6db74">&#39;Once upona time
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ###&#39;</span>
+<span style="color:#f92672">human-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/human-temp.txt</span>
+<span style="color:#f92672">last-final-command</span>: <span style="color:#ae81ff">ALSO_EXPORT=&#34;&#34; PEN_PROMPT=&#34;Glossary of terms.\n###\nossified\nDefinition&lt;pen-colon&gt;</span>
+  <span style="color:#ae81ff">Turn into bone or bony tissue.\n###\n18\nDefinition&lt;pen-colon&gt;&#34; PEN_LM_COMMAND=&#34;openai-complete.sh&#34;</span>
+  <span style="color:#ae81ff">PEN_MODEL=&#34;davinci-codex&#34; PEN_WHITESPACE_SUPPORT=&#34;&#34; PEN_ENGINE=&#34;OpenAI Codex&#34; PEN_API_ENDPOINT=&#34;https://api.openai.com&#34;</span>
+  <span style="color:#ae81ff">PEN_PAYLOADS=&#34;&#34; PEN_QUERY=&#34;&#34; PEN_COUNTERQUERY=&#34;&#34; PEN_LOGPROBS=&#34;10&#34; PEN_APPROXIMATE_PROMPT_LENGTH=42</span>
+  <span style="color:#ae81ff">PEN_ENGINE_MIN_TOKENS=0 PEN_ENGINE_MAX_TOKENS=2049 PEN_MIN_TOKENS=0 PEN_MAX_TOKENS=122</span>
+  <span style="color:#ae81ff">PEN_REPETITION_PENALTY=&#34;&#34; PEN_FREQUENCY_PENALTY=&#34;&#34; PEN_PRESENCE_PENALTY=&#34;&#34; PEN_LENGTH_PENALTY=&#34;&#34;</span>
+  <span style="color:#ae81ff">PEN_MIN_GENERATED_TOKENS=3 PEN_MAX_GENERATED_TOKENS=80 PEN_TEMPERATURE=&#34;0.5&#34; PEN_MODE=&#34;&#34;</span>
+  <span style="color:#ae81ff">PEN_STOP_SEQUENCE=&#34;##&#34; PEN_STOP_SEQUENCES=&#34;[\&#34;##\&#34;,\&#34;&lt;delim-1&gt;\&#34;,\&#34;&lt;delim-1&gt;\&#34;]&#34;</span>
+  <span style="color:#ae81ff">PEN_DOCUMENTS= PEN_TOP_P=&#34;1&#34; PEN_TOP_K=1 PEN_FLAGS= PEN_CACHE= PEN_USER_AGENT=&#34;emacs/pen&#34;</span>
+  <span style="color:#ae81ff">PEN_TRAILING_WHITESPACE=&#34; &#34; PEN_N_COMPLETIONS=&#34;1&#34; PEN_ENGINE_MIN_GENERATED_TOKENS=3</span>
+  <span style="color:#ae81ff">PEN_ENGINE_MAX_GENERATED_TOKENS=4096 PEN_COLLECT_FROM_POS=94 PEN_END_POS=94 PEN_N_JOBS=&#34;1&#34;</span>
+  <span style="color:#ae81ff">PEN_SEARCH_THRESHOLD= PEN_GEN_UUID=&#34;d39816c8-9c67-4af0-b858-263ac7e55d2a&#34; PEN_GEN_TIME=1640780265.3621588</span>
+  <span style="color:#ae81ff">PEN_GEN_DIR=&#34;/root/.pen/results/results_1640780265.3621588_29.12.21_d39816c8-9c67-4af0-b858-263ac7e55d2a&#34;</span>
+  <span style="color:#ae81ff">PEN_INJECT_GEN_START=&#34;&#34; lm-complete</span>
+<span style="color:#f92672">last-final-prompt</span>: <span style="color:#e6db74">&#39;Glossary of terms.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ossified
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Definition: Turn into bone or bony tissue.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  18
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Definition: &lt;END&gt;&#39;</span>
+<span style="color:#f92672">last-pen-command</span>: <span style="color:#e6db74">&#39;&#34;penf&#34; &#34;-u&#34; &#34;pf-define-word-for-glossary/1&#34; &#34;18&#34; &#34;nil&#34; &#34;nil&#34;&#39;</span>
+<span style="color:#f92672">last-pen-command-exprs</span>: <span style="color:#e6db74">&#39;&#34;penf&#34; &#34;-u&#34; &#34;pf-define-word-for-glossary/1&#34; &#34;18&#34;&#39;</span>
+<span style="color:#f92672">last-prompt-data</span>: <span style="color:#66d9ef">null</span>
+<span style="color:#f92672">lm-complete-results</span>: <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#f92672">lm-complete-stderr</span>: <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#f92672">lm-complete-stdout</span>: <span style="color:#e6db74">&#39;/tmp/results_29.12.21__1640780269_75be3eca-250b-41a2-b6b9-25c65a5660f6_DKHR1
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  8ed897a_U66VG&#39;</span>
+<span style="color:#f92672">nlpcloud-last-output</span>: <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#f92672">nlpcloud-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/nlpcloud-temp.txt</span>
+<span style="color:#f92672">offline-last-output</span>: <span style="color:#e6db74">&#39;Glossary of terms.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ossified
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Definition: Turn into bone or bony tissue.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  something
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Definition: PEN MODEL DummyModel prompt Glossary of terms n nossified nDefinition
+</span><span style="color:#e6db74">  Turn into bone or bony tissue&#39;</span>
+<span style="color:#f92672">offline-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/offline-temp.txt</span>
+<span style="color:#f92672">openai-last-output</span>: <span style="color:#e6db74">&#39;Glossary of terms.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ossified
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Definition: Turn into bone or bony tissue.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  ###
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  )/
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  Definition: A word used to replace a word that cannot be used by itself but can
+</span><span style="color:#e6db74">  be used with another word.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &#39;</span>
+<span style="color:#f92672">openai-last-output-fp</span>: <span style="color:#ae81ff">$HOME/.pen/temp/openai-temp.txt</span>
+<span style="color:#f92672">pen-force-engine</span>: <span style="color:#ae81ff">Offline</span>
+<span style="color:#f92672">pen-prompt-functions-failed</span>: <span style="color:#66d9ef">null</span>
+<span style="color:#f92672">pen-prompts-failed</span>: <span style="color:#66d9ef">null</span>
+<span style="color:#f92672">ruby-gen-next-user-prompt</span>: <span style="color:#ae81ff">$HOME/.pen/temp/ruby-gen-next-user-prompt.txt</span>
+<span style="color:#f92672">semantic-path</span>: <span style="color:#ae81ff">spacemacs-buffer</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Also, for your interest.</p>
+<p>The command <code>M-x pen-customize</code> will start the following control panel.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">For help using this buffer, see [Easy Customization] in the [Emacs manual].
+
+Operate on all settings in this buffer:
+[ Revert... ] [ Apply ] [ Apply and Save ]
+
+
+pen group:  Group definition missing.
+      [ State ]: something in this group has been changed outside customize.
+
+Hide iλ-thin: Boolean: [Toggle]  on (non-nil)
+   [ State ]: SAVED and set.
+   thin-client mode toggle
+
+Hide pen-avoid-divulging: Boolean: [Toggle]  off (nil)
+   [ State ]: CHANGED outside Customize.
+   Avoid divulging information
+
+Show Value pen-completers-directory
+   Directory where personal .completer files are located
+
+Show Value pen-contrib-directory
+   Personal pen-contrib.el respository
+
+Show Value pen-cost-efficient
+   Avoid spending money
+
+Hide pen-debug: Boolean: [Toggle]  on (non-nil)
+   [ State ]: CHANGED outside Customize.
+   When debug is on, try is disabled, and all errors throw an exception
+
+Hide pen-default-engine: nil
+   [ State ]: CHANGED outside Customize. (mismatch)
+   Default engine
+
+Show Value pen-default-lm-command
+   Default LM completer script
+
+Hide pen-default-logprobs: Integer: 10
+   [ State ]: CHANGED outside Customize.
+   The default logprobs value
+
+Show Value pen-describe-images
+   Describe images
+
+Show Value pen-engines-directory
+   Personal engine respository
+
+Hide pen-eww-text-only: Boolean: [Toggle]  off (nil)
+   [ State ]: CHANGED outside Customize.
+   eww text mode only
+
+Show Value pen-fav-programming-language
+   By setting pen-fav-programming-language, you set a default language to translate into. More
+
+Show Value pen-fav-world-language
+   By setting pen-fav-world-language, you set a default language to translate into. More
+
+Hide pen-force-engine: String: Offline
+   [ State ]: CHANGED outside Customize.
+   Force using this engine
+
+Show Value pen-force-few-completions
+   Forcing only few completions will speed up Pen.el, but not by much usually
+
+Show Value pen-force-logprobs
+   The logprobs to force
+
+Show Value pen-force-n-collate
+
+Show Value pen-force-n-completions
+
+Show Value pen-force-no-uniq-results
+
+Show Value pen-force-one
+
+Show Value pen-force-single-collation
+   Forcing only one collation will speed up Pen.el
+
+Hide pen-force-strip-unicode: Boolean: [Toggle]  off (nil)
+   [ State ]: CHANGED outside Customize.
+   Strip unicode from input
+
+Show Value pen-force-temperature
+   The temperature to force
+
+Show Value pen-glossaries-directory
+   Personal glossary respository
+
+Show Value pen-ink-disabled
+   Disable ink. Useful if it’s breaking
+
+Show Value pen-libre-only
+   Only use libre engines
+
+Hide pen-logprobs-on: Boolean: [Toggle]  on (non-nil)
+   [ State ]: CHANGED outside Customize.
+   Boolean to enable/disable logprobs
+
+Hide pen-memo-prefix: String: mele-host
+   [ State ]: CHANGED outside Customize.
+   memoize file prefix
+
+Hide pen-n-simultaneous-requests: Integer: 5
+   [ State ]: CHANGED outside Customize.
+   The number of requests to make in parallel using lm-complete
+
+Show Value pen-nlsh-histdir
+   Directory where history files for nlsh
+
+Hide pen-obtain-probabilities: Boolean: [Toggle]  off (nil)
+   [ State ]: CHANGED outside Customize.
+   Also query for the probabilities, when prompting
+
+Show Value pen-override-lm-command
+   Override LM completer script
+
+Show Value pen-penel-directory
+   Personal pen.el respository
+
+Show Value pen-preview-token-length
+   The number of tokens to generate in order to get a preview of what to further generate
+
+Show Value pen-prompt-discovery-recursion-depth
+   The number of git repositories deep that pen.el will go looking
+
+Hide pen-prompt-force-engine-disabled: Boolean: [Toggle]  on (non-nil)
+   [ State ]: CHANGED outside Customize.
+   Do not allow prompts to override the engine override
+
+Show Value pen-prompt-function-prefix
+   Prefix string to prepend to prompt function names
+
+Show Value pen-prompts-directory
+   Personal prompt respository
+
+Show Value pen-prompts-library-directory
+   The directory where prompts repositories are stored
+
+Show Value pen-sh-update
+   Export UPDATE=y when executing sn and such
+
+Show Value pen-snippets-directory
+   Personal snippets respository
+
+Show Value pen-term-cl-refresh-after-fz
+   While in term, send a C-l just after selecting for insertion
+
+Show Value pen-user-agent
+   User Agent for self identification</code></pre></td></tr></table>
+</div>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>Multiple Pen.el daemons for asynchronous LLM prompting from an LSP server</title>

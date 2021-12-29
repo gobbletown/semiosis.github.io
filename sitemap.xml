@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://semiosis.github.io/posts/a-prompting-lsp-server-for-any-language-or-context-using-large-language-models/</loc>
+    <lastmod>2021-12-30T00:00:00+13:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/posts/</loc>
+    <lastmod>2021-12-30T00:00:00+13:00</lastmod>
+  </url><url>
+    <loc>http://semiosis.github.io/</loc>
+    <lastmod>2021-12-30T00:00:00+13:00</lastmod>
+  </url><url>
     <loc>http://semiosis.github.io/posts/multiple-pen-el-daemons-for-asynchronous-llm-prompting-from-an-lsp-server/</loc>
     <lastmod>2021-12-28T00:00:00+13:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/parallelization-for-pen-el-exuberant-completions/</loc>
-    <lastmod>2021-12-28T00:00:00+13:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/posts/</loc>
-    <lastmod>2021-12-28T00:00:00+13:00</lastmod>
-  </url><url>
-    <loc>http://semiosis.github.io/</loc>
     <lastmod>2021-12-28T00:00:00+13:00</lastmod>
   </url><url>
     <loc>http://semiosis.github.io/posts/gpt-3-codex-for-everything-using-pen-el/</loc>

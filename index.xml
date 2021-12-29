@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A prompting LSP server for any language or context using large language models, built with emacs</title>
+      <link>http://semiosis.github.io/posts/a-prompting-lsp-server-for-any-language-or-context-using-large-language-models/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/a-prompting-lsp-server-for-any-language-or-context-using-large-language-models/</guid>
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Summary I have put together an LSP server that utilises large LMs, so that interacting with your computer whilst utilising AI systems is fully transparent and controllable.
+You have control over:
+ What information is sent to the language model (could be to Google, Microsoft, etc.).  For example, a prompt may watch your screen and send that information to the LM.</description>
+    </item>
+    
     <item>
       <title>Multiple Pen.el daemons for asynchronous LLM prompting from an LSP server</title>
       <link>http://semiosis.github.io/posts/multiple-pen-el-daemons-for-asynchronous-llm-prompting-from-an-lsp-server/</link>
