@@ -39,7 +39,7 @@ You have control over:
 You have control over:
  What information is sent to the language model (could be to Google, Microsoft, etc.).  For example, a prompt may watch your screen and send that information to the LM."><meta itemprop="datePublished" content="2021-12-30T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2021-12-30T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="1798"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="1838"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
@@ -233,10 +233,15 @@ is that everything you do through emacs can fit within an GPT-3 prompt.</p>
 <p>It is very nearly ready to be used for all
 emacs modes, and for other editors. The issue
 currently is that LSP servers require access
-to a real file. That should be fairly
-straightforward to hack around, so no problem
-&ndash; I&rsquo;ll have that finished in the next few
-days.</p>
+to a real file on the same filesystem as the
+LSP server is running. Currently your software
+would have to be running inside the docker
+container for the lsp server to work with it.
+You can, for instance, install VSCode into the
+container and connect. However, I&rsquo;m working on
+a solution to have contact with the external
+world. That involves possibly using a
+bind/sshfs mount.</p>
 <h2 id="prompting-server">Prompting server</h2>
 <p>The <code>Pen.el</code> container also functions as a prompting server.</p>
 <p><code>Pen.el</code> may very well be simultaneously the
@@ -890,7 +895,7 @@ Show Value pen-user-agent
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1798 Words
+        1838 Words
       </p>
 
       <p>

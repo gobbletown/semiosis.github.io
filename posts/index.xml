@@ -91,10 +91,15 @@ is that everything you do through emacs can fit within an GPT-3 prompt.</p>
 <p>It is very nearly ready to be used for all
 emacs modes, and for other editors. The issue
 currently is that LSP servers require access
-to a real file. That should be fairly
-straightforward to hack around, so no problem
-&ndash; I&rsquo;ll have that finished in the next few
-days.</p>
+to a real file on the same filesystem as the
+LSP server is running. Currently your software
+would have to be running inside the docker
+container for the lsp server to work with it.
+You can, for instance, install VSCode into the
+container and connect. However, I&rsquo;m working on
+a solution to have contact with the external
+world. That involves possibly using a
+bind/sshfs mount.</p>
 <h2 id="prompting-server">Prompting server</h2>
 <p>The <code>Pen.el</code> container also functions as a prompting server.</p>
 <p><code>Pen.el</code> may very well be simultaneously the
