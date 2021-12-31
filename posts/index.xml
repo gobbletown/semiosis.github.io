@@ -6,8 +6,106 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Fri, 31 Dec 2021 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Pen.el installation from scratch</title>
+            <link>http://semiosis.github.io/posts/pen-el-installation-from-scratch/</link>
+            <pubDate>Fri, 31 Dec 2021 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-el-installation-from-scratch/</guid>
+            <description>Summary This is a demo of setting up Pen.el for the first time.
+1 2 3 4 5  sudo adduser --home /home/pen pen sudo usermod -aG docker pen sudo usermod -aG sudo pen sudo login pen   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  git clone &amp;#34;https://github.com/semiosis/pen.el&amp;#34; git clone &amp;#34;https://github.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>This is a demo of setting up Pen.el for the first time.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo adduser --home /home/pen pen
+sudo usermod -aG docker pen
+sudo usermod -aG sudo pen
+
+sudo login pen</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/pen.el&#34;</span>
+git clone <span style="color:#e6db74">&#34;https://github.com/semiosis/prompts&#34;</span>
+
+docker pull semiosis/pen:latest
+
+mkdir -p $HOME/.pen
+
+<span style="color:#75715e"># Put in your keys, or do not, it&#39;s up to you!</span>
+echo <span style="color:#e6db74">&#34;sk-&lt;openai key here&gt;&#34;</span> &gt; $HOME/.pen/openai_api_key       <span style="color:#75715e"># https://openai.com/</span>
+echo <span style="color:#e6db74">&#34;&lt;ai21 key here&gt;&#34;</span> &gt; $HOME/.pen/ai21_api_key              <span style="color:#75715e"># https://www.ai21.com/</span>
+echo <span style="color:#e6db74">&#34;&lt;hf key here&gt;&#34;</span> &gt; $HOME/.pen/hf_api_key                  <span style="color:#75715e"># https://huggingface.co/</span>
+echo <span style="color:#e6db74">&#34;&lt;nlpcloud key here&gt;&#34;</span> &gt; $HOME/.pen/nlpcloud_api_key      <span style="color:#75715e"># https://nlpcloud.io/</span>
+echo <span style="color:#e6db74">&#34;&lt;alephalpha key here&gt;&#34;</span> &gt; $HOME/.pen/alephalpha_api_key  <span style="color:#75715e"># https://aleph-alpha.de/</span>
+echo <span style="color:#e6db74">&#34;&lt;cohere key here&gt;&#34;</span> &gt; $HOME/.pen/cohere_api_key          <span style="color:#75715e"># https://cohere.ai/</span>
+
+<span style="color:#75715e"># Add the scripts to the PATH</span>
+echo export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>realpath .<span style="color:#66d9ef">)</span><span style="color:#e6db74">/pen.el/scripts:\$PATH&#34;</span> &gt;&gt; $HOME/.profile
+
+<span style="color:#75715e"># Add this to prevent C-s from freezing the terminal</span>
+echo <span style="color:#e6db74">&#34;stty stop undef 2&gt;/dev/null; stty start undef 2&gt;/dev/null&#34;</span> | tee -a $HOME/.zshrc &gt;&gt; $HOME/.bashrc
+
+<span style="color:#75715e"># Source your .profile</span>
+. $HOME/.profile
+
+<span style="color:#75715e"># Run pen</span>
+pen</code></pre></td></tr></table>
+</div>
+</div>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/at9VpN22g7ZZkf4Vkoy8hIOJJ" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/at9VpN22g7ZZkf4Vkoy8hIOJJ.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/at9VpN22g7ZZkf4Vkoy8hIOJJ.js" id="asciicast-at9VpN22g7ZZkf4Vkoy8hIOJJ" async></script>
+<p>Assuming the key that you entered is the actual key, continue now to use Pen!</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/ZF8boxsqiKpUB6nQeaBszMk4y" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/ZF8boxsqiKpUB6nQeaBszMk4y.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/ZF8boxsqiKpUB6nQeaBszMk4y.js" id="asciicast-ZF8boxsqiKpUB6nQeaBszMk4y" async></script>
+<p>In this test, everything except Apostrophe seemed to be working on a clean installation.
+I have introduced a bug that I will fix soon.</p>
+]]></content>
+        </item>
         
         <item>
             <title>A prompting LSP server for any language or context using large language models, built with emacs</title>
