@@ -103,7 +103,16 @@ pen</code></pre></td></tr></table>
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/ZF8boxsqiKpUB6nQeaBszMk4y.js" id="asciicast-ZF8boxsqiKpUB6nQeaBszMk4y" async></script>
 <p>In this test, everything except Apostrophe seemed to be working on a clean installation.
-I have introduced a bug that I will fix soon.</p>
+I have introduced a bug that I will fix soon. Done!</p>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/pxrwm2tI47KCDwKGwHaqKL18M" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/pxrwm2tI47KCDwKGwHaqKL18M.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/pxrwm2tI47KCDwKGwHaqKL18M.js" id="asciicast-pxrwm2tI47KCDwKGwHaqKL18M" async></script>
+<p>Apostrophe is working now. You can even start
+conversations with SMEs based on whatever text
+you see on screen. That includes the
+conversation with whichever chatbot you are
+conversing with currently!</p>
 ]]></content>
         </item>
         
