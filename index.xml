@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 31 Dec 2021 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pen.vim - A prompting libary for vim, based on Pen.el</title>
+      <link>http://semiosis.github.io/posts/pen-vim-a-prompting-libary-for-vim-based-on-pen-el/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/pen-vim-a-prompting-libary-for-vim-based-on-pen-el/</guid>
+      <description>Summary I begin work on a prompting library for vim.
+ code http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &amp;#34;&amp;#34;&amp;#34; skip the first of the variadic args because it&amp;#39;s the input for arg in args[1:] let s = s . &amp;#39; &amp;#34;&amp;#39; . arg . &amp;#39;&amp;#34;&amp;#39; endfor let cmd = a:fun .</description>
+    </item>
+    
     <item>
       <title>On this day, the company Semiotic was started</title>
       <link>http://semiosis.github.io/posts/on-this-day-the-company-semiotic-was-started/</link>

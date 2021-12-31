@@ -6,8 +6,70 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 31 Dec 2021 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>pen.vim - A prompting libary for vim, based on Pen.el</title>
+            <link>http://semiosis.github.io/posts/pen-vim-a-prompting-libary-for-vim-based-on-pen-el/</link>
+            <pubDate>Sat, 01 Jan 2022 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-vim-a-prompting-libary-for-vim-based-on-pen-el/</guid>
+            <description>Summary I begin work on a prompting library for vim.
+ code http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &amp;#34;&amp;#34;&amp;#34; skip the first of the variadic args because it&amp;#39;s the input for arg in args[1:] let s = s . &amp;#39; &amp;#34;&amp;#39; . arg . &amp;#39;&amp;#34;&amp;#39; endfor let cmd = a:fun .</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>I begin work on a prompting library for vim.</p>
+<dl>
+<dt>code</dt>
+<dd><a href="http://github.com/semiosis/pen.vim">http://github.com/semiosis/pen.vim</a></dd>
+</dl>
+<!--listend-->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">Prompt</span>(<span style="color:#66d9ef">fun</span>, ...)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">args</span> = <span style="color:#a6e22e">a</span>:<span style="color:#ae81ff">000</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> = <span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; skip the first of the variadic args because it&#39;s the input</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">for</span> <span style="color:#a6e22e">arg</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">args</span>[<span style="color:#ae81ff">1</span>:]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> = <span style="color:#a6e22e">s</span> . <span style="color:#e6db74">&#39; &#34;&#39;</span> . <span style="color:#a6e22e">arg</span> . <span style="color:#e6db74">&#39;&#34;&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">endfor</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cmd</span> = <span style="color:#a6e22e">a</span>:<span style="color:#66d9ef">fun</span> . <span style="color:#a6e22e">s</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> = <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;penf -u &#34;</span> . <span style="color:#a6e22e">cmd</span>, @<span style="color:#a6e22e">p</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> @<span style="color:#a6e22e">p</span> = <span style="color:#a6e22e">s</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">    &#34; paste from p register</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#34;normal! gv\&#34;pp&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">xnoremap</span> <span style="color:#a6e22e">Zt</span> <span style="color:#e6db74">&#34;py:silent! call Prompt(&#34;</span><span style="color:#a6e22e">pf</span>-<span style="color:#a6e22e">transform</span>-<span style="color:#a6e22e">code</span>/<span style="color:#ae81ff">3</span><span style="color:#e6db74">&#34;, @p, &#34;</span><span style="color:#a6e22e">vim</span><span style="color:#e6db74">&#34;, input(&#34;</span><span style="color:#a6e22e">transformation</span>: <span style="color:#75715e">&#34;))&lt;CR&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/u5hEs6O9pZALmLeyr4e8SBE4v" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/u5hEs6O9pZALmLeyr4e8SBE4v.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/u5hEs6O9pZALmLeyr4e8SBE4v.js" id="asciicast-u5hEs6O9pZALmLeyr4e8SBE4v" async></script>]]></content>
+        </item>
         
         <item>
             <title>On this day, the company Semiotic was started</title>
