@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Shane Mulligan]">
 <meta name="description" content="Summary I begin work on a prompting library for vim.
- code http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &amp;#34;&amp;#34;&amp;#34; skip the first of the variadic args because it&amp;#39;s the input for arg in args[1:] let s = s . &amp;#39; &amp;#34;&amp;#39; . arg . &amp;#39;&amp;#34;&amp;#39; endfor let cmd = a:fun ." />
+Prerequesites  https://semiosis.github.io/posts/pen-el-installation-from-scratch/  Once installed, Pen.el has a script pen which pen.vim will use to run the prompts.
+Code  GitHub repo http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &amp;#34;&amp;#34;&amp;#34; skip the first of the variadic args because it&amp;#39;s the input for arg in args[1:] let s = s ." />
 <meta name="keywords" content="NLP GPT OpenAI EleutherAI Huggingface AGI" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -35,23 +36,26 @@
 
 <meta itemprop="name" content="pen.vim - A prompting libary for vim, based on Pen.el">
 <meta itemprop="description" content="Summary I begin work on a prompting library for vim.
- code http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &#34;&#34;&#34; skip the first of the variadic args because it&#39;s the input for arg in args[1:] let s = s . &#39; &#34;&#39; . arg . &#39;&#34;&#39; endfor let cmd = a:fun ."><meta itemprop="datePublished" content="2022-01-01T00:00:00&#43;13:00" />
+Prerequesites  https://semiosis.github.io/posts/pen-el-installation-from-scratch/  Once installed, Pen.el has a script pen which pen.vim will use to run the prompts.
+Code  GitHub repo http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &#34;&#34;&#34; skip the first of the variadic args because it&#39;s the input for arg in args[1:] let s = s ."><meta itemprop="datePublished" content="2022-01-01T00:00:00&#43;13:00" />
 <meta itemprop="dateModified" content="2022-01-01T00:00:00&#43;13:00" />
-<meta itemprop="wordCount" content="103"><meta itemprop="image" content="http://semiosis.github.io/"/>
+<meta itemprop="wordCount" content="122"><meta itemprop="image" content="http://semiosis.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://semiosis.github.io/"/>
 
 <meta name="twitter:title" content="pen.vim - A prompting libary for vim, based on Pen.el"/>
 <meta name="twitter:description" content="Summary I begin work on a prompting library for vim.
- code http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &#34;&#34;&#34; skip the first of the variadic args because it&#39;s the input for arg in args[1:] let s = s . &#39; &#34;&#39; . arg . &#39;&#34;&#39; endfor let cmd = a:fun ."/>
+Prerequesites  https://semiosis.github.io/posts/pen-el-installation-from-scratch/  Once installed, Pen.el has a script pen which pen.vim will use to run the prompts.
+Code  GitHub repo http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &#34;&#34;&#34; skip the first of the variadic args because it&#39;s the input for arg in args[1:] let s = s ."/>
 
 
 
 
     <meta property="og:title" content="pen.vim - A prompting libary for vim, based on Pen.el" />
 <meta property="og:description" content="Summary I begin work on a prompting library for vim.
- code http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &#34;&#34;&#34; skip the first of the variadic args because it&#39;s the input for arg in args[1:] let s = s . &#39; &#34;&#39; . arg . &#39;&#34;&#39; endfor let cmd = a:fun ." />
+Prerequesites  https://semiosis.github.io/posts/pen-el-installation-from-scratch/  Once installed, Pen.el has a script pen which pen.vim will use to run the prompts.
+Code  GitHub repo http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function! Prompt(fun, ...) let args = a:000 let s = &#34;&#34;&#34; skip the first of the variadic args because it&#39;s the input for arg in args[1:] let s = s ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://semiosis.github.io/posts/pen-vim-a-prompting-libary-for-vim-based-on-pen-el/" /><meta property="og:image" content="http://semiosis.github.io/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-01T00:00:00&#43;13:00" />
@@ -158,8 +162,14 @@
       <div class="post-content">
         <h2 id="summary">Summary</h2>
 <p>I begin work on a prompting library for vim.</p>
+<h2 id="prerequesites">Prerequesites</h2>
+<ul>
+<li><a href="https://semiosis.github.io/posts/pen-el-installation-from-scratch/">https://semiosis.github.io/posts/pen-el-installation-from-scratch/</a></li>
+</ul>
+<p>Once installed, <code>Pen.el</code> has a script <code>pen</code> which <code>pen.vim</code> will use to run the prompts.</p>
+<h2 id="code">Code</h2>
 <dl>
-<dt>code</dt>
+<dt>GitHub repo</dt>
 <dd><a href="http://github.com/semiosis/pen.vim">http://github.com/semiosis/pen.vim</a></dd>
 </dl>
 <!--listend-->
@@ -232,7 +242,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        103 Words
+        122 Words
       </p>
 
       <p>
