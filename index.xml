@@ -30,6 +30,17 @@ prompt  Code http://github.com/semiosis/prompts/blob/master/prompts/generate-sou
     </item>
     
     <item>
+      <title>ilambda shell interop - imaginary functions for bash</title>
+      <link>http://semiosis.github.io/posts/ilambda-bash-interop/</link>
+      <pubDate>Mon, 03 Jan 2022 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/ilambda-bash-interop/</guid>
+      <description>Summary I demonstrate using ilambda from the terminal. ilambda is great because it makes mocking APIs and functions so easy!
+How it works It uses the pen emacs-lisp-bash interop, and simply calls idefun (define imaginary function), then calls it with the provided arguments.
+1  pene &amp;#34;(progn (idefun color-of-thing) (color-of-thing \&amp;#34;watermelon\&amp;#34;))&amp;#34;   green How to use it From bash, on the host machine or from within the container, run as so:</description>
+    </item>
+    
+    <item>
       <title>Pen.el demo - integrating language models with many things</title>
       <link>http://semiosis.github.io/posts/pen-el-demo-integrating-language-models-with-programming-imaginary-programming-chatbots-and-mindmapping/</link>
       <pubDate>Mon, 03 Jan 2022 00:00:00 +1300</pubDate>
