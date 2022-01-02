@@ -6,8 +6,36 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Mon, 03 Jan 2022 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Pen.el demo - integrating language models with many things</title>
+            <link>http://semiosis.github.io/posts/pen-el-demo-integrating-language-models-with-programming-imaginary-programming-chatbots-and-mindmapping/</link>
+            <pubDate>Mon, 03 Jan 2022 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-el-demo-integrating-language-models-with-programming-imaginary-programming-chatbots-and-mindmapping/</guid>
+            <description>Summary This is just a recent demo of utilising some of Pen.el&amp;rsquo;s features in succession.
+ integrating language models with:  programming imaginary programming chatbots mindmapping bash interop     -- </description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>This is just a recent demo of utilising some of Pen.el&rsquo;s features in
+succession.</p>
+<ul>
+<li>integrating language models with:
+<ul>
+<li>programming</li>
+<li>imaginary programming</li>
+<li>chatbots</li>
+<li>mindmapping</li>
+<li>bash interop</li>
+</ul>
+</li>
+</ul>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/WGXs15PaLJ5GQzc9RhLMWg8d2" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/WGXs15PaLJ5GQzc9RhLMWg8d2.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/WGXs15PaLJ5GQzc9RhLMWg8d2.js" id="asciicast-WGXs15PaLJ5GQzc9RhLMWg8d2" async></script>]]></content>
+        </item>
         
         <item>
             <title>pen.vim - A prompting libary for vim, based on Pen.el</title>
