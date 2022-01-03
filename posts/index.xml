@@ -53,7 +53,7 @@ for discourse analysis.</p>
             <guid>http://semiosis.github.io/posts/explaining-code-with-pen-el/</guid>
             <description>Summary Here is a demonstration of pet=/=cterm. pet (stands for Pen eterm) is an invocation of cterm. Prefix a bash command with pet in order to run it inside an Pen.el emacs terminal. Invoke pet from inside the docker container.
 Here is an example:
-1  pet lein repl     As you can see, your humble lein REPL has been augmented with AI to provide completion, explainability, chatbots and documentation, etc.</description>
+1  pet lein repl    --  As you can see, your humble lein REPL has been augmented with AI to provide completion, explainability, chatbots and documentation, etc.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>Here is a demonstration of <code>pet=/=cterm</code>. <code>pet</code> (stands for Pen eterm) is an invocation of <code>cterm</code>.
 Prefix a bash command with <code>pet</code> in order to run it inside an Pen.el emacs terminal.
@@ -68,7 +68,7 @@ Invoke <code>pet</code> from inside the docker container.</p>
 </div>
 </div>
 <!-- Play on asciinema.com -->
-<h1 id="a-titleasciinema-recording-hrefhttpsasciinemaorgagtmdn8rlb8pmkb5rwzbgomnhd-target_blankimg-altasciinema-recording-srchttpsasciinemaorgagtmdn8rlb8pmkb5rwzbgomnhdsvg-a"><a title="asciinema recording" href="https://asciinema.org/a/gTMdN8RLB8pmKb5rwzbgOMnhd" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gTMdN8RLB8pmKb5rwzbgOMnhd.svg" /></a></h1>
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/gTMdN8RLB8pmKb5rwzbgOMnhd" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/gTMdN8RLB8pmKb5rwzbgOMnhd.svg" /></a> -->
 <!-- Play on the blog -->
 <script src="https://asciinema.org/a/gTMdN8RLB8pmKb5rwzbgOMnhd.js" id="asciicast-gTMdN8RLB8pmKb5rwzbgOMnhd" async></script>
 <p>As you can see, your humble <code>lein</code> <code>REPL</code> has

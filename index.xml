@@ -27,7 +27,7 @@ Over New Year&amp;rsquo;s day, 1 Jan 2022, I read a few chapters and decided tha
       <guid>http://semiosis.github.io/posts/explaining-code-with-pen-el/</guid>
       <description>Summary Here is a demonstration of pet=/=cterm. pet (stands for Pen eterm) is an invocation of cterm. Prefix a bash command with pet in order to run it inside an Pen.el emacs terminal. Invoke pet from inside the docker container.
 Here is an example:
-1  pet lein repl     As you can see, your humble lein REPL has been augmented with AI to provide completion, explainability, chatbots and documentation, etc.</description>
+1  pet lein repl    --  As you can see, your humble lein REPL has been augmented with AI to provide completion, explainability, chatbots and documentation, etc.</description>
     </item>
     
     <item>
