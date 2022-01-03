@@ -376,11 +376,15 @@ Code  GitHub repo http://github.com/semiosis/pen.vim   1 2 3 4 5 6 7 8 9 10 11 1
             
             <guid>http://semiosis.github.io/posts/on-this-day-the-company-semiotic-was-started/</guid>
             <description>Summary To commemorate the birth of a new company, this prompt has been created. Semiotic will provide support and services for Human-AGI interaction. All software will be free-as-in-freedom.
-Prompt  code http://github.com/semiosis/prompts/blob/master/prompts/on-this-day-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  task: &amp;#34;on this day&amp;#34; doc: &amp;#34;State the significance of this day with regard to history&amp;#34; prompt-version: 1 prompt: |+Date: &amp;lt;date&amp;gt; &amp;lt;:pp&amp;gt;On this day in history, engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
+Investors  http://github.com/semiosis/investment-proposal  Prompt  code http://github.com/semiosis/prompts/blob/master/prompts/on-this-day-1.prompt   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  task: &amp;#34;on this day&amp;#34; doc: &amp;#34;State the significance of this day with regard to history&amp;#34; prompt-version: 1 prompt: |+Date: &amp;lt;date&amp;gt; &amp;lt;:pp&amp;gt;On this day in history, engine: &amp;#34;OpenAI Codex&amp;#34; temperature: 0.</description>
             <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
 <p>To commemorate the birth of a new company, this prompt has been created.
 Semiotic will provide support and services for Human-AGI interaction.
 All software will be free-as-in-freedom.</p>
+<h2 id="investors">Investors</h2>
+<ul>
+<li><a href="http://github.com/semiosis/investment-proposal">http://github.com/semiosis/investment-proposal</a></li>
+</ul>
 <h2 id="prompt">Prompt</h2>
 <dl>
 <dt>code</dt>
