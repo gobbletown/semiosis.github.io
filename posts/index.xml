@@ -42,6 +42,11 @@ for discourse analysis.</p>
 <dt>A discourse parser</dt>
 <dd><a href="https://github.com/yizhongw/StageDP">https://github.com/yizhongw/StageDP</a></dd>
 </dl>
+<h2 id="demo">Demo</h2>
+<!-- Play on asciinema.com -->
+<!-- <a title="asciinema recording" href="https://asciinema.org/a/yxMZr27AwMVWeQum2Q8ShC0QL" target="_blank"><img alt="asciinema recording" src="https://asciinema.org/a/yxMZr27AwMVWeQum2Q8ShC0QL.svg" /></a> -->
+<!-- Play on the blog -->
+<script src="https://asciinema.org/a/yxMZr27AwMVWeQum2Q8ShC0QL.js" id="asciicast-yxMZr27AwMVWeQum2Q8ShC0QL" async></script>
 <h2 id="prompt">Prompt</h2>
 <dl>
 <dt>Code</dt>
