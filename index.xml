@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 03 Jan 2022 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jan 2022 00:00:00 +1300</lastBuildDate><atom:link href="http://semiosis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pen.el for privacy and crypto security</title>
+      <link>http://semiosis.github.io/posts/pen-el-for-privacy/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +1300</pubDate>
+      
+      <guid>http://semiosis.github.io/posts/pen-el-for-privacy/</guid>
+      <description>Summary This is why you use Pen.el.
+AI augmentation of your computing happens under your control Take cterm as an example You may ssh into a private server and wrap cterm around and be in total control of when and where the text on the screen is being used.
+You may chat to a friend on Facebook Messenger and be confident that no algorithms are learning from your typing or censoring it.</description>
+    </item>
+    
     <item>
       <title>Discourse Analysis with Codex</title>
       <link>http://semiosis.github.io/posts/discourse-analysis-with-codex/</link>

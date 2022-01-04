@@ -6,8 +6,45 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 03 Jan 2022 00:00:00 +1300</lastBuildDate>
+        <lastBuildDate>Tue, 04 Jan 2022 00:00:00 +1300</lastBuildDate>
         <atom:link href="http://semiosis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Pen.el for privacy and crypto security</title>
+            <link>http://semiosis.github.io/posts/pen-el-for-privacy/</link>
+            <pubDate>Tue, 04 Jan 2022 00:00:00 +1300</pubDate>
+            
+            <guid>http://semiosis.github.io/posts/pen-el-for-privacy/</guid>
+            <description>Summary This is why you use Pen.el.
+AI augmentation of your computing happens under your control Take cterm as an example You may ssh into a private server and wrap cterm around and be in total control of when and where the text on the screen is being used.
+You may chat to a friend on Facebook Messenger and be confident that no algorithms are learning from your typing or censoring it.</description>
+            <content type="html"><![CDATA[<h2 id="summary">Summary</h2>
+<p>This is why you use <code>Pen.el</code>.</p>
+<h2 id="ai-augmentation-of-your-computing-happens-under-your-control">AI augmentation of your computing happens under your control</h2>
+<h3 id="take-cterm-as-an-example">Take <code>cterm</code> as an example</h3>
+<p>You may ssh into a private server and wrap
+<code>cterm</code> around and be in total control of when
+and where the text on the screen is being used.</p>
+<p>You may chat to a friend on Facebook Messenger
+and be confident that no algorithms are
+learning from your typing or censoring it.</p>
+<h2 id="no-need-to-sign-up-for-a-plethora-of-different-saas-proving-nlp-as-a-service">No need to sign up for a plethora of different SAAS proving NLP as a service</h2>
+<ul>
+<li>Keeps you sane and in control of your money</li>
+</ul>
+<h2 id="you-command-the-language-models-used">You command the language models used</h2>
+<ul>
+<li>No lock-in to AI vendors</li>
+</ul>
+<h2 id="you-may-design-your-own-prompts">You may design your own prompts</h2>
+<ul>
+<li>It&rsquo;s healthy</li>
+<li>It makes you employable</li>
+<li>It helps you to understand AI</li>
+</ul>
+<h2 id="you-monetise-on-your-own-workflows">You monetise on your own workflows</h2>
+]]></content>
+        </item>
         
         <item>
             <title>Discourse Analysis with Codex</title>
