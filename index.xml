@@ -306,8 +306,8 @@ Initial pen server setup 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 2
       <pubDate>Sun, 28 Nov 2021 00:00:00 +1300</pubDate>
       
       <guid>http://semiosis.github.io/nlsh/</guid>
-      <description>   Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing NL·SH! To use it, simply run nlsh with the operating system.
-1 2 3 4 5 6 7 8  # Example 1 nlsh Alpine Linux # Example 2 nlsh Ubuntu # Example 3 -- with syntax highlighting nlsh -nv Ubuntu   Demo  --     -- </description>
+      <description>Install with Pen      Pen.el on GitHub https://github.com/semiosis/pen.el/   Tutorial https://mullikine.github.io/posts/pen-el-tutorial/    Introducing NL·SH! To use it, simply run nlsh with the operating system.
+1 2 3 4 5 6 7 8  # Example 1 nlsh Alpine Linux # Example 2 nlsh Ubuntu # Example 3 -- with syntax highlighting nlsh -nv Ubuntu   1 2 3 4 5 6 7 8  Enter your commands in natural language.</description>
     </item>
     
     <item>
